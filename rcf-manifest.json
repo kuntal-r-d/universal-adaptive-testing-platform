@@ -1,0 +1,26 @@
+{
+  "$schema": "https://rcf.dev/schemas/manifest/v1.json",
+  "version": "1.0.0",
+  "project": {
+    "name": "Universal Adaptive Testing Platform",
+    "description": "A configurable, extensible adaptive testing engine supporting multiple exam methodologies (CAT, LOFT, Linear) with AI-augmented content authoring",
+    "repository": "kuntal-r-d/universal-adaptive-testing-platform"
+  },
+  "paths": {
+    "prd": "docs/prd",
+    "userStories": "docs/user-stories",
+    "testSpecs": "docs/test-specs"
+  },
+  "idPrefixes": {
+    "requirement": "REQ",
+    "userStory": "US",
+    "acceptanceCriteria": "AC",
+    "testSpec": "TS",
+    "testCase": "TC"
+  },
+  "metadata": {
+    "createdAt": "2024-12-22",
+    "lastUpdated": "2024-12-22",
+    "status": "draft"
+  }
+}

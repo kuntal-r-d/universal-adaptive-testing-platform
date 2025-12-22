@@ -1,0 +1,188 @@
+{
+  "id": "PRD-001",
+  "title": "Universal Adaptive Testing Platform",
+  "version": "1.0.0",
+  "status": "draft",
+  "metadata": {
+    "createdAt": "2024-12-22",
+    "lastUpdated": "2024-12-22",
+    "owner": "Product Team"
+  },
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "title": "Polymorphic Exam Engine",
+      "priority": "critical",
+      "category": "Core Engine",
+      "description": "The system must support a Pluggable Strategy architecture to handle different exam methodologies dynamically.",
+      "subRequirements": [
+        {
+          "id": "REQ-001.1",
+          "title": "Engine Configuration Profile",
+          "description": "The system shall allow administrators to define an Exam Profile with algorithm types, scoring models, and stopping rules."
+        },
+        {
+          "id": "REQ-001.2",
+          "title": "Session State Management",
+          "description": "The system must preserve the state of every active exam with resume capability."
+        },
+        {
+          "id": "REQ-001.3",
+          "title": "Navigation Control",
+          "description": "The system must support configurable navigation constraints (unidirectional/bidirectional)."
+        }
+      ],
+      "userStories": ["US-001", "US-002", "US-003"]
+    },
+    {
+      "id": "REQ-002",
+      "title": "Universal Question Bank (CMS)",
+      "priority": "critical",
+      "category": "Content Management",
+      "description": "The content management system must be schema-agnostic to support any domain.",
+      "subRequirements": [
+        {
+          "id": "REQ-002.1",
+          "title": "Dynamic Item Schema",
+          "description": "The database must use JSONB structures with variable option counts and interaction types."
+        },
+        {
+          "id": "REQ-002.2",
+          "title": "Hierarchical Tagging",
+          "description": "Questions must support a flexible tagging tree mapping to external syllabi."
+        },
+        {
+          "id": "REQ-002.3",
+          "title": "Psychometric Metadata",
+          "description": "Every question must store difficulty, discrimination, guessing parameters, and exposure count."
+        }
+      ],
+      "userStories": ["US-004", "US-005", "US-006"]
+    },
+    {
+      "id": "REQ-003",
+      "title": "AI-Augmented Authoring",
+      "priority": "high",
+      "category": "Content Generation",
+      "description": "AI-powered question generation with human validation.",
+      "subRequirements": [
+        {
+          "id": "REQ-003.1",
+          "title": "Generation Pipeline",
+          "description": "Interface to prompt LLM for draft item generation based on Exam Profile and Topic."
+        },
+        {
+          "id": "REQ-003.2",
+          "title": "Human-in-the-Loop Validation",
+          "description": "Generated items must go through DRAFT state before promotion to ACTIVE."
+        }
+      ],
+      "userStories": ["US-007", "US-008"]
+    },
+    {
+      "id": "REQ-004",
+      "title": "Smart Coach Analytics",
+      "priority": "high",
+      "category": "Analytics & Insights",
+      "description": "Intelligent analytics for learner progress and adaptive remediation.",
+      "subRequirements": [
+        {
+          "id": "REQ-004.1",
+          "title": "Gap Analysis",
+          "description": "Compare Current Theta against Target Theta for the Exam Profile."
+        },
+        {
+          "id": "REQ-004.2",
+          "title": "Velocity Prediction",
+          "description": "Calculate Ready Date based on historical improvement rate."
+        },
+        {
+          "id": "REQ-004.3",
+          "title": "Adaptive Remediation",
+          "description": "Generate dynamic study tasks targeting lowest-performing areas."
+        }
+      ],
+      "userStories": ["US-009", "US-010", "US-011"]
+    },
+    {
+      "id": "REQ-005",
+      "title": "Extensibility & Modularity",
+      "priority": "critical",
+      "category": "Architecture",
+      "description": "Architecture supporting easy extension without core modifications.",
+      "subRequirements": [
+        {
+          "id": "REQ-005.1",
+          "title": "Strategy Pattern Implementation",
+          "description": "Use Strategy Design Pattern for scoring engine extensibility."
+        },
+        {
+          "id": "REQ-005.2",
+          "title": "Service Decoupling",
+          "description": "Scoring Service and Content Service must communicate only via REST/gRPC APIs."
+        }
+      ],
+      "userStories": ["US-012"]
+    },
+    {
+      "id": "REQ-006",
+      "title": "Performance & Latency",
+      "priority": "critical",
+      "category": "Performance",
+      "description": "System must meet strict performance requirements.",
+      "subRequirements": [
+        {
+          "id": "REQ-006.1",
+          "title": "Next-Item Latency",
+          "description": "< 200ms (P95) between answer submission and next question render."
+        },
+        {
+          "id": "REQ-006.2",
+          "title": "Concurrent User Scaling",
+          "description": "Horizontal scaling via Docker/Kubernetes for concurrent users."
+        }
+      ],
+      "userStories": ["US-013"]
+    },
+    {
+      "id": "REQ-007",
+      "title": "Security & Integrity",
+      "priority": "critical",
+      "category": "Security",
+      "description": "Protection of question bank and prevention of exploitation.",
+      "subRequirements": [
+        {
+          "id": "REQ-007.1",
+          "title": "Item Exposure Control",
+          "description": "Randomness factor or Sympson-Hetter method to prevent question overuse."
+        },
+        {
+          "id": "REQ-007.2",
+          "title": "Anti-Harvesting Protection",
+          "description": "Rate limiting and anomaly detection to prevent bank scraping."
+        }
+      ],
+      "userStories": ["US-014", "US-015"]
+    },
+    {
+      "id": "REQ-008",
+      "title": "Data Integrity",
+      "priority": "critical",
+      "category": "Data Management",
+      "description": "Complete audit trail and transaction guarantees.",
+      "subRequirements": [
+        {
+          "id": "REQ-008.1",
+          "title": "Audit Logging",
+          "description": "Log every keystroke, answer change, and time-per-item for forensic analysis."
+        },
+        {
+          "id": "REQ-008.2",
+          "title": "ACID Compliance",
+          "description": "PostgreSQL with strict transaction guarantees."
+        }
+      ],
+      "userStories": ["US-016"]
+    }
+  ]
+}
