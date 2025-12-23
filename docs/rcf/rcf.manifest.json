@@ -1,0 +1,7 @@
+{
+  "version": "1.0.0",
+  "projectName": "Universal Adaptive Testing Platform",
+  "description": "A configurable, extensible adaptive testing engine supporting multiple exam methodologies (CAT, LOFT, Linear) with AI-augmented content authoring",
+  "activePrdId": "PRD-001",
+  "prds": []
+}
