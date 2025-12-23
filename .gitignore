@@ -20,7 +20,8 @@ Thumbs.db
 
 # Build outputs
 dist/
-build/
+/build/
+!docs/build/
 *.pyc
 __pycache__/
 
