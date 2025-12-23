@@ -1,0 +1,196 @@
+{
+  "$schema": "rcf-prd",
+  "prdId": "PRD-001",
+  "productName": "Universal Adaptive Testing Platform",
+  "version": "1.0.0",
+  "status": "draft",
+  "executiveSummary": "A configurable, extensible adaptive testing engine supporting multiple exam methodologies (CAT, LOFT, Linear) with AI-augmented content authoring and smart analytics.",
+  "problemStatement": "Current adaptive testing platforms are typically hard-coded for specific exam types, making it costly to adapt them for new domains or methodologies.",
+  "targetUsers": [
+    "Test Administrators",
+    "Content Authors",
+    "Test Takers",
+    "Psychometricians",
+    "System Integrators"
+  ],
+  "objectives": [
+    "Enable support for multiple exam methodologies through a single configurable engine",
+    "Reduce time-to-market for new exam types by 80%",
+    "Achieve sub-200ms next-item latency"
+  ],
+  "inScope": [
+    "Polymorphic exam engine with configurable algorithms",
+    "Universal question bank supporting multiple item types",
+    "AI-augmented content authoring"
+  ],
+  "outOfScope": [
+    "Proctoring services",
+    "Mobile native applications"
+  ],
+  "constraints": [
+    "Must comply with WCAG 2.1 AA",
+    "Must support PostgreSQL for ACID compliance"
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "title": "Polymorphic Exam Engine",
+      "description": "The system must support a Pluggable Strategy architecture to handle different exam methodologies dynamically.",
+      "category": "functional",
+      "domain": "Core Engine",
+      "priority": "must"
+    },
+    {
+      "id": "REQ-002",
+      "title": "Session State Management",
+      "description": "The system must preserve the state of every active exam session with resume capability.",
+      "category": "functional",
+      "domain": "Core Engine",
+      "priority": "must"
+    },
+    {
+      "id": "REQ-003",
+      "title": "Navigation Control",
+      "description": "The system must support configurable navigation constraints.",
+      "category": "functional",
+      "domain": "Core Engine",
+      "priority": "must"
+    },
+    {
+      "id": "REQ-004",
+      "title": "Dynamic Item Schema",
+      "description": "The database must use JSONB structures to store question content.",
+      "category": "functional",
+      "domain": "Content Management",
+      "priority": "must"
+    },
+    {
+      "id": "REQ-005",
+      "title": "Hierarchical Tagging",
+      "description": "Questions must support a flexible tagging tree.",
+      "category": "functional",
+      "domain": "Content Management",
+      "priority": "must"
+    },
+    {
+      "id": "REQ-006",
+      "title": "Psychometric Metadata",
+      "description": "Every question record must store psychometric parameters.",
+      "category": "functional",
+      "domain": "Content Management",
+      "priority": "must"
+    },
+    {
+      "id": "REQ-007",
+      "title": "AI Generation Pipeline",
+      "description": "The system shall provide an interface to prompt an LLM to generate draft items.",
+      "category": "functional",
+      "domain": "Content Authoring",
+      "priority": "should"
+    },
+    {
+      "id": "REQ-008",
+      "title": "Human-in-the-Loop Validation",
+      "description": "Generated items must enter a DRAFT state with workflow approval.",
+      "category": "functional",
+      "domain": "Content Authoring",
+      "priority": "must"
+    },
+    {
+      "id": "REQ-009",
+      "title": "Gap Analysis",
+      "description": "The system must compare users Current Theta against Target Theta.",
+      "category": "functional",
+      "domain": "Analytics",
+      "priority": "should"
+    },
+    {
+      "id": "REQ-010",
+      "title": "Velocity Prediction",
+      "description": "The system shall calculate a Ready Date based on improvement rate.",
+      "category": "functional",
+      "domain": "Analytics",
+      "priority": "could"
+    },
+    {
+      "id": "REQ-011",
+      "title": "Adaptive Remediation",
+      "description": "The system must generate dynamic study tasks targeting weak areas.",
+      "category": "functional",
+      "domain": "Analytics",
+      "priority": "should"
+    },
+    {
+      "id": "REQ-012",
+      "title": "Strategy Pattern Implementation",
+      "description": "The backend code must use the Strategy Design Pattern for the scoring engine.",
+      "category": "non-functional",
+      "domain": "Architecture",
+      "priority": "must"
+    },
+    {
+      "id": "REQ-013",
+      "title": "Service Decoupling",
+      "description": "The Scoring Service must be completely decoupled from the Content Service.",
+      "category": "non-functional",
+      "domain": "Architecture",
+      "priority": "must"
+    },
+    {
+      "id": "REQ-014",
+      "title": "Next-Item Latency",
+      "description": "Next adaptive question must render in less than 200ms P95.",
+      "category": "non-functional",
+      "domain": "Performance",
+      "priority": "must"
+    },
+    {
+      "id": "REQ-015",
+      "title": "Horizontal Scaling",
+      "description": "The system must support horizontal scaling for 10,000 concurrent sessions.",
+      "category": "non-functional",
+      "domain": "Performance",
+      "priority": "must"
+    },
+    {
+      "id": "REQ-016",
+      "title": "Item Exposure Control",
+      "description": "The item selection algorithm must include exposure control method.",
+      "category": "security",
+      "domain": "Security",
+      "priority": "must"
+    },
+    {
+      "id": "REQ-017",
+      "title": "Anti-Harvesting Protection",
+      "description": "The API must implement rate limiting and anomaly detection.",
+      "category": "security",
+      "domain": "Security",
+      "priority": "must"
+    },
+    {
+      "id": "REQ-018",
+      "title": "Audit Logging",
+      "description": "All test-taker actions must be logged for forensic analysis.",
+      "category": "security",
+      "domain": "Data Integrity",
+      "priority": "must"
+    },
+    {
+      "id": "REQ-019",
+      "title": "ACID Compliance",
+      "description": "Exam results must be stored with strict transaction guarantees.",
+      "category": "technical",
+      "domain": "Data Integrity",
+      "priority": "must"
+    }
+  ],
+  "glossary": {
+    "CAT": "Computerized Adaptive Testing",
+    "LOFT": "Linear-on-the-Fly Testing",
+    "IRT": "Item Response Theory",
+    "Theta": "Ability estimate on the IRT scale"
+  },
+  "createdAt": "2025-12-22T00:00:00Z",
+  "updatedAt": "2025-12-23T07:52:24.915Z"
+}
