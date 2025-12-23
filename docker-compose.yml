@@ -1,0 +1,75 @@
+version: '3.8'
+
+services:
+  # API Service
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=adaptive_testing
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - MONGODB_URI=mongodb://mongodb:27017/adaptive_testing
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - postgres
+      - mongodb
+      - redis
+    networks:
+      - uat-network
+
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_DB=adaptive_testing
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - uat-network
+
+  # MongoDB Database
+  mongodb:
+    image: mongo:7
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongodb-data:/data/db
+    networks:
+      - uat-network
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis-data:/data
+    networks:
+      - uat-network
+
+volumes:
+  postgres-data:
+  mongodb-data:
+  redis-data:
+
+networks:
+  uat-network:
+    driver: bridge
+

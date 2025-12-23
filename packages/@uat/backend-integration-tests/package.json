@@ -1,0 +1,25 @@
+{
+  "name": "@uat/backend-integration-tests",
+  "version": "0.1.0",
+  "description": "Integration test infrastructure for Universal Adaptive Testing Platform",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts",
+    "test:integration": "node --test test/integration/**/*.spec.ts",
+    "lint": "eslint src/",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@uat/backend-common": "workspace:*",
+    "supertest": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/supertest": "^6.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.6.0"
+  }
+}
+

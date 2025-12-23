@@ -1,0 +1,50 @@
+# Universal Adaptive Testing Platform - Cursor Rules
+
+## Project Overview
+This is a TypeScript pnpm monorepo for an adaptive testing platform following the RCF (Requirements Confidence Framework) methodology.
+
+## Key Conventions
+
+### TypeScript
+- Use `.js` extension in imports (NodeNext resolution)
+- Use named exports for controllers and services
+- Use `type` keyword for type-only imports
+- Strict mode enabled - no `any` types
+
+### Error Handling
+- Always use `Exceptions.convert()` in catch blocks
+- Use custom exception classes from `@uat/backend-common`
+
+### Logging
+- Use `global.logger` (no imports needed)
+- Follow structured logging patterns
+
+### Testing
+- Use `node:test` with Sinon.js for mocking
+- Follow AAA pattern (Arrange-Act-Assert)
+- Integration tests follow RCF traceability: `tests/integration/backend/US-XXX/AC-XXX.spec.ts`
+
+### RCF Traceability
+- Add RCF comments to code: `// RCF: REQ-XXX, US-XXX`
+- One test file per Acceptance Criterion
+- Test cases numbered TC-001, TC-002, etc. per file
+
+## Directory Structure
+- `apps/` - Deployable applications
+- `packages/@uat/` - Shared libraries
+- `docs/rcf/` - RCF JSON documents
+- `docs/product/` - Product requirements (markdown)
+- `docs/architecture/` - Technical architecture
+- `docs/build/` - Build coordination and patterns
+
+## Dependencies
+- Use `workspace:*` for internal package dependencies
+- External dependencies should be in the package that needs them
+
+## Commands
+- `pnpm dev` - Start development server
+- `pnpm build` - Build all packages and apps
+- `pnpm test:unit` - Run unit tests
+- `pnpm test:integration` - Run integration tests
+- `pnpm quality` - Run format, lint, and type checks
+
