@@ -1,0 +1,325 @@
+{
+  "$schema": "rcf-prd",
+  "prdId": "PRD-001",
+  "productName": "Universal Adaptive Testing Platform",
+  "version": "1.0.0",
+  "status": "draft",
+  "executiveSummary": "A configurable, extensible adaptive testing engine supporting multiple exam methodologies (CAT, LOFT, Linear) with AI-augmented content authoring and smart analytics. The platform treats exam rules, stopping criteria, and scoring algorithms as configurable metadata rather than hard-coded logic.",
+  "problemStatement": "Current adaptive testing platforms are typically hard-coded for specific exam types (e.g., NCLEX, GMAT), making it costly and time-consuming to adapt them for new domains or methodologies. Organizations need a flexible, extensible platform that can support multiple exam types, scoring models, and content domains without requiring core engine modifications.",
+  "targetUsers": [
+    "Test Administrators - Configure exam profiles, manage question banks, and monitor test delivery",
+    "Content Authors - Create, review, and manage question content across multiple domains",
+    "Test Takers - Students and professionals taking adaptive exams for certification or assessment",
+    "Psychometricians - Analyze test performance, calibrate items, and validate scoring models",
+    "System Integrators - Integrate the platform with external LMS and credential systems"
+  ],
+  "objectives": [
+    "Enable support for multiple exam methodologies (CAT, LOFT, Linear, Section-Adaptive) through a single configurable engine",
+    "Reduce time-to-market for new exam types by 80% through pluggable strategy architecture",
+    "Achieve sub-200ms next-item latency for optimal test-taker experience",
+    "Provide AI-augmented content authoring to accelerate question bank development",
+    "Deliver actionable analytics through Smart Coach to improve learner outcomes"
+  ],
+  "inScope": [
+    "Polymorphic exam engine with configurable algorithms and stopping rules",
+    "Universal question bank supporting multiple item types and domains",
+    "AI-augmented content authoring with human-in-the-loop validation",
+    "Smart Coach analytics including gap analysis and adaptive remediation",
+    "Session state management with resume capability",
+    "Item exposure control and anti-harvesting protection",
+    "Audit logging and ACID-compliant data storage"
+  ],
+  "outOfScope": [
+    "Proctoring and identity verification services (third-party integration only)",
+    "Mobile native applications (web-responsive design only for MVP)",
+    "Real-time video-based cheating detection",
+    "Integration with specific LMS platforms (API-first approach for future integrations)",
+    "Psychometric research and item calibration studies (platform supports data export)"
+  ],
+  "constraints": [
+    "Must comply with accessibility standards (WCAG 2.1 AA)",
+    "Must support PostgreSQL as the primary database for ACID compliance",
+    "Scoring Service must be implemented in Python for statistical library support",
+    "Must operate in cloud-agnostic containerized environment (Docker/Kubernetes)",
+    "API response times must meet P95 < 200ms SLA for adaptive item selection"
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "title": "Polymorphic Exam Engine",
+      "description": "The system must support a 'Pluggable Strategy' architecture to handle different exam methodologies dynamically. This includes support for Item Adaptive (NCLEX/GMAT), Section Adaptive (GRE), Linear Fixed (Standard), and LOFT (Randomized) algorithms. The engine must allow administrators to define Exam Profiles with configurable scoring models (Rasch, 1PL, 2PL, 3PL, or Classical Test Theory) and stopping rules (Standard Error, Length, Time).",
+      "category": "functional",
+      "domain": "Core Engine",
+      "priority": "must",
+      "rationale": "A pluggable architecture enables rapid deployment of new exam types without modifying core engine code, reducing development time and risk.",
+      "tags": [
+        "engine",
+        "adaptive",
+        "configuration"
+      ]
+    },
+    {
+      "id": "REQ-002",
+      "title": "Session State Management",
+      "description": "The system must preserve the state of every active exam session. If a user disconnects, they must be able to resume at the exact question index with the exact same timer value. Session state must include current theta estimate, answered items, remaining time, and navigation history.",
+      "category": "functional",
+      "domain": "Core Engine",
+      "priority": "must",
+      "rationale": "Session persistence is critical for high-stakes testing where network interruptions should not disadvantage test-takers.",
+      "tags": [
+        "session",
+        "persistence",
+        "reliability"
+      ]
+    },
+    {
+      "id": "REQ-003",
+      "title": "Navigation Control",
+      "description": "The system must support configurable navigation constraints including Unidirectional (no going back, CAT standard) and Bidirectional (flag and review, Linear standard). Navigation mode must be configurable per Exam Profile.",
+      "category": "functional",
+      "domain": "Core Engine",
+      "priority": "must",
+      "rationale": "Different exam methodologies require different navigation rules to maintain test validity and security.",
+      "tags": [
+        "navigation",
+        "configuration"
+      ]
+    },
+    {
+      "id": "REQ-004",
+      "title": "Dynamic Item Schema",
+      "description": "The database must use JSONB structures to store question content, allowing for variable option counts (2 to N options) and multiple interaction types including Single Select, Multi-Select (SATA), Ordering, Hotspot (Image coordinates), and Drag-and-Drop.",
+      "category": "functional",
+      "domain": "Content Management",
+      "priority": "must",
+      "rationale": "Schema-agnostic storage enables support for any domain without database schema changes.",
+      "tags": [
+        "database",
+        "content",
+        "flexibility"
+      ]
+    },
+    {
+      "id": "REQ-005",
+      "title": "Hierarchical Tagging",
+      "description": "Questions must support a flexible tagging tree (Domain → Subject → Topic → Competency) to map to any external syllabus such as NCLEX Client Needs or GMAT Quant categories.",
+      "category": "functional",
+      "domain": "Content Management",
+      "priority": "must",
+      "rationale": "Flexible tagging enables content reuse across different exam profiles and supports granular performance analytics.",
+      "tags": [
+        "taxonomy",
+        "content",
+        "metadata"
+      ]
+    },
+    {
+      "id": "REQ-006",
+      "title": "Psychometric Metadata",
+      "description": "Every question record must store psychometric parameters including Difficulty Parameter (β), Discrimination Parameter (α), Guessing Parameter (γ), and Exposure Count to track usage frequency and prevent over-exposure.",
+      "category": "functional",
+      "domain": "Content Management",
+      "priority": "must",
+      "rationale": "Psychometric metadata is essential for IRT-based adaptive algorithms and item bank security.",
+      "tags": [
+        "psychometrics",
+        "IRT",
+        "metadata"
+      ]
+    },
+    {
+      "id": "REQ-007",
+      "title": "AI Generation Pipeline",
+      "description": "The system shall provide an interface to prompt an LLM (via API) to generate draft items based on a specific Exam Profile and Topic. Generated content must include question stem, options, correct answer, rationale, and suggested metadata tags.",
+      "category": "functional",
+      "domain": "Content Authoring",
+      "priority": "should",
+      "rationale": "AI-augmented authoring accelerates question bank development while maintaining quality through human review.",
+      "tags": [
+        "AI",
+        "content-generation",
+        "LLM"
+      ]
+    },
+    {
+      "id": "REQ-008",
+      "title": "Human-in-the-Loop Validation",
+      "description": "Generated items must enter a DRAFT state. They can only be promoted to ACTIVE (live) after manual review and approval by an Admin. The system must support workflow states: DRAFT → REVIEW → ACTIVE → RETIRED.",
+      "category": "functional",
+      "domain": "Content Authoring",
+      "priority": "must",
+      "rationale": "Human validation ensures content quality and accuracy before items are used in live assessments.",
+      "tags": [
+        "workflow",
+        "quality",
+        "validation"
+      ]
+    },
+    {
+      "id": "REQ-009",
+      "title": "Gap Analysis",
+      "description": "The system must compare a user's Current Theta against the Target Theta (Passing Standard) defined in the Exam Profile. Gap analysis must be visualized at overall and topic/competency levels.",
+      "category": "functional",
+      "domain": "Analytics",
+      "priority": "should",
+      "rationale": "Gap analysis helps learners understand their readiness and focus study efforts effectively.",
+      "tags": [
+        "analytics",
+        "theta",
+        "performance"
+      ]
+    },
+    {
+      "id": "REQ-010",
+      "title": "Velocity Prediction",
+      "description": "The system shall calculate a 'Ready Date' based on the user's historical rate of improvement (Δθ / Time). Prediction must account for study frequency and topic-specific progress.",
+      "category": "functional",
+      "domain": "Analytics",
+      "priority": "could",
+      "rationale": "Velocity prediction helps learners plan their study schedule and set realistic exam dates.",
+      "tags": [
+        "analytics",
+        "prediction",
+        "planning"
+      ]
+    },
+    {
+      "id": "REQ-011",
+      "title": "Adaptive Remediation",
+      "description": "The system must generate dynamic study tasks (e.g., 'Take a 20-question quiz on Topic X') specifically targeting the user's lowest-performing metadata tags.",
+      "category": "functional",
+      "domain": "Analytics",
+      "priority": "should",
+      "rationale": "Targeted remediation improves learning efficiency by focusing on areas of weakness.",
+      "tags": [
+        "analytics",
+        "remediation",
+        "personalization"
+      ]
+    },
+    {
+      "id": "REQ-012",
+      "title": "Strategy Pattern Implementation",
+      "description": "The backend code must use the Strategy Design Pattern for the scoring engine. Adding a new exam type (e.g., LSAT) should require creating a new Strategy Class, not modifying the core engine code.",
+      "category": "non-functional",
+      "domain": "Architecture",
+      "priority": "must",
+      "rationale": "Strategy pattern ensures extensibility and maintainability of the scoring engine.",
+      "tags": [
+        "architecture",
+        "design-pattern",
+        "extensibility"
+      ]
+    },
+    {
+      "id": "REQ-013",
+      "title": "Service Decoupling",
+      "description": "The Scoring Service (Python) must be completely decoupled from the Content Service (Express/Strapi). They shall communicate only via defined REST/gRPC APIs with versioned contracts.",
+      "category": "non-functional",
+      "domain": "Architecture",
+      "priority": "must",
+      "rationale": "Service decoupling enables independent scaling, deployment, and technology evolution.",
+      "tags": [
+        "architecture",
+        "microservices",
+        "API"
+      ]
+    },
+    {
+      "id": "REQ-014",
+      "title": "Next-Item Latency",
+      "description": "The time between submitting an answer and rendering the next adaptive question must be less than 200 milliseconds (P95).",
+      "category": "non-functional",
+      "domain": "Performance",
+      "priority": "must",
+      "rationale": "Low latency is critical for test-taker experience and prevents timing advantages/disadvantages.",
+      "tags": [
+        "performance",
+        "latency",
+        "SLA"
+      ]
+    },
+    {
+      "id": "REQ-015",
+      "title": "Horizontal Scaling",
+      "description": "The system must support horizontal scaling via Docker/Kubernetes to handle spikes in concurrent test-takers without degradation. Target: 10,000 concurrent sessions.",
+      "category": "non-functional",
+      "domain": "Performance",
+      "priority": "must",
+      "rationale": "Horizontal scaling ensures availability during peak testing periods.",
+      "tags": [
+        "performance",
+        "scaling",
+        "kubernetes"
+      ]
+    },
+    {
+      "id": "REQ-016",
+      "title": "Item Exposure Control",
+      "description": "The item selection algorithm must include a randomness factor or exposure control method (like the Sympson-Hetter method) to ensure no single question is overused, preserving bank security.",
+      "category": "security",
+      "domain": "Security",
+      "priority": "must",
+      "rationale": "Exposure control prevents item compromise and maintains test validity over time.",
+      "tags": [
+        "security",
+        "exposure",
+        "psychometrics"
+      ]
+    },
+    {
+      "id": "REQ-017",
+      "title": "Anti-Harvesting Protection",
+      "description": "The API must implement rate limiting and anomaly detection to prevent a single user from scraping the question bank by rapidly cycling through exams.",
+      "category": "security",
+      "domain": "Security",
+      "priority": "must",
+      "rationale": "Anti-harvesting protection preserves the integrity of the question bank.",
+      "tags": [
+        "security",
+        "rate-limiting",
+        "fraud"
+      ]
+    },
+    {
+      "id": "REQ-018",
+      "title": "Audit Logging",
+      "description": "Every keystroke, answer change (if allowed), and time-per-item must be logged for forensic analysis. Logs must be immutable and retained per compliance requirements.",
+      "category": "security",
+      "domain": "Data Integrity",
+      "priority": "must",
+      "rationale": "Comprehensive audit logging supports score validity defense and fraud investigation.",
+      "tags": [
+        "audit",
+        "logging",
+        "compliance"
+      ]
+    },
+    {
+      "id": "REQ-019",
+      "title": "ACID Compliance",
+      "description": "Exam results and transactions must be stored in a relational database (PostgreSQL) with strict transaction guarantees to prevent data loss during network failures.",
+      "category": "technical",
+      "domain": "Data Integrity",
+      "priority": "must",
+      "rationale": "ACID compliance ensures no exam results are lost due to system failures.",
+      "tags": [
+        "database",
+        "transactions",
+        "reliability"
+      ]
+    }
+  ],
+  "glossary": {
+    "CAT": "Computerized Adaptive Testing - adjusts item difficulty based on test-taker responses",
+    "LOFT": "Linear-on-the-Fly Testing - randomly assembled fixed-length tests from a pool",
+    "IRT": "Item Response Theory - statistical framework for designing and scoring tests",
+    "Theta": "Ability estimate on the IRT scale, typically ranging from -4 to +4",
+    "SEM": "Standard Error of Measurement - precision of the ability estimate",
+    "SATA": "Select All That Apply - multiple-response item type",
+    "Sympson-Hetter": "Exposure control method that limits item usage probability",
+    "1PL/2PL/3PL": "IRT models with 1, 2, or 3 parameters (difficulty, discrimination, guessing)"
+  },
+  "createdAt": "2025-12-22T00:00:00Z",
+  "updatedAt": "2025-12-23T04:41:49.079Z"
+}
