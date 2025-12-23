@@ -6,6 +6,7 @@
   "prds": [
     {
       "id": "PRD-001",
+      "name": "Universal Adaptive Testing Platform",
       "path": "prds/PRD-001.json"
     }
   ]
