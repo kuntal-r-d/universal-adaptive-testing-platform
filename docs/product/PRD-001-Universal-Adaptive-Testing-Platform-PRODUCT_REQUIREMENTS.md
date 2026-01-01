@@ -1,9 +1,9 @@
 # PRD-001: Universal Adaptive Testing Platform
 
 **Status:** Draft
-**Version:** 1.0.0
+**Version:** 1.1.0
 **Created:** 2025-12-22
-**Last Updated:** 2025-12-22
+**Last Updated:** 2026-01-01
 **Owner:** Product Team
 
 ---
@@ -39,6 +39,8 @@ Current adaptive testing platforms are typically hard-coded for specific exam ty
 3. Achieve sub-200ms next-item latency for optimal test-taker experience
 4. Provide AI-augmented content authoring to accelerate question bank development
 5. Deliver actionable analytics through Smart Coach to improve learner outcomes
+6. Empower students with comprehensive progress dashboards and personalized study recommendations
+7. Enable administrators to efficiently manage question banks across multiple categories and criteria
 
 ---
 
@@ -53,6 +55,10 @@ Current adaptive testing platforms are typically hard-coded for specific exam ty
 - Session state management with resume capability
 - Item exposure control and anti-harvesting protection
 - Audit logging and ACID-compliant data storage
+- Student Progress Dashboard with post-exam analytics and performance insights
+- Topic-based learning path with targeted practice exams
+- Intelligent exam scheduling based on study time and topic coverage
+- Admin Dashboard for question bank and content management
 
 ### Out of Scope
 
@@ -76,7 +82,9 @@ Current adaptive testing platforms are typically hard-coded for specific exam ty
 
 ## Functional Requirements
 
-### REQ-001: Polymorphic Exam Engine
+### Core Engine Domain
+
+#### REQ-001: Polymorphic Exam Engine
 
 **Priority:** Must
 **Category:** Functional
@@ -95,7 +103,7 @@ The system must support a "Pluggable Strategy" architecture to handle different 
 
 ---
 
-### REQ-002: Session State Management
+#### REQ-002: Session State Management
 
 **Priority:** Must
 **Category:** Functional
@@ -112,7 +120,7 @@ The system must preserve the state of every active exam session. If a user disco
 
 ---
 
-### REQ-003: Navigation Control
+#### REQ-003: Navigation Control
 
 **Priority:** Must
 **Category:** Functional
@@ -129,7 +137,9 @@ Navigation mode must be configurable per Exam Profile.
 
 ---
 
-### REQ-004: Dynamic Item Schema
+### Content Management Domain
+
+#### REQ-004: Dynamic Item Schema
 
 **Priority:** Must
 **Category:** Functional
@@ -144,7 +154,7 @@ The database must use `JSONB` structures to store question content, allowing for
 
 ---
 
-### REQ-005: Hierarchical Tagging
+#### REQ-005: Hierarchical Tagging
 
 **Priority:** Must
 **Category:** Functional
@@ -156,7 +166,7 @@ Questions must support a flexible tagging tree (Domain → Subject → Topic →
 
 ---
 
-### REQ-006: Psychometric Metadata
+#### REQ-006: Psychometric Metadata
 
 **Priority:** Must
 **Category:** Functional
@@ -173,7 +183,9 @@ Every question record must store:
 
 ---
 
-### REQ-007: AI Generation Pipeline
+### Content Authoring Domain
+
+#### REQ-007: AI Generation Pipeline
 
 **Priority:** Should
 **Category:** Functional
@@ -191,7 +203,7 @@ The system shall provide an interface to prompt an LLM (via API) to generate dra
 
 ---
 
-### REQ-008: Human-in-the-Loop Validation
+#### REQ-008: Human-in-the-Loop Validation
 
 **Priority:** Must
 **Category:** Functional
@@ -205,7 +217,9 @@ Generated items must enter a `DRAFT` state. They can only be promoted to `ACTIVE
 
 ---
 
-### REQ-009: Gap Analysis
+### Analytics Domain
+
+#### REQ-009: Gap Analysis
 
 **Priority:** Should
 **Category:** Functional
@@ -217,7 +231,7 @@ The system must compare a user's Current Theta against the Target Theta (Passing
 
 ---
 
-### REQ-010: Velocity Prediction
+#### REQ-010: Velocity Prediction
 
 **Priority:** Could
 **Category:** Functional
@@ -229,7 +243,7 @@ The system shall calculate a "Ready Date" based on the user's historical rate of
 
 ---
 
-### REQ-011: Adaptive Remediation
+#### REQ-011: Adaptive Remediation
 
 **Priority:** Should
 **Category:** Functional
@@ -241,9 +255,164 @@ The system must generate dynamic study tasks (e.g., "Take a 20-question quiz on 
 
 ---
 
+### Student Analytics Domain
+
+#### REQ-020: Student Progress Dashboard
+
+**Priority:** Must
+**Category:** Functional
+**Domain:** Student Analytics
+
+The system must provide a comprehensive student dashboard displaying:
+
+- Overall progress and performance trends over time
+- Topic-wise proficiency levels with visual charts and graphs
+- Historical exam results and score progression
+- Current ability estimate (theta) visualization
+- Comparison against target passing standards
+- Learning streaks and engagement metrics
+
+**Rationale:** Students need visibility into their progress to stay motivated and make informed study decisions.
+
+---
+
+#### REQ-021: Post-Exam Performance Analytics
+
+**Priority:** Must
+**Category:** Functional
+**Domain:** Student Analytics
+
+After every exam completion, the system must display detailed analytics including:
+
+- Overall score and percentile ranking
+- Topic-wise performance breakdown with strengths/weaknesses identification
+- Time spent per question and section analysis
+- Improvement areas compared to previous attempts
+- Specific topics requiring more study time (prioritized list)
+- Correct/incorrect answer review with explanations
+- Performance trend compared to historical attempts
+
+**Rationale:** Immediate feedback after exams helps students understand their strengths and weaknesses while the experience is fresh.
+
+---
+
+#### REQ-022: Study Time Recommendations
+
+**Priority:** Should
+**Category:** Functional
+**Domain:** Student Analytics
+
+The system must calculate and display recommended study time per topic based on:
+
+- Current performance gaps (theta difference from target)
+- Topic difficulty and weight in the exam
+- Student's historical learning velocity
+- Time until target exam date
+
+Output must include:
+- Specific hour estimates per topic
+- Prioritized topic lists ranked by impact
+- Weekly study schedule suggestions
+- Progress milestones
+
+**Rationale:** Personalized study time recommendations improve learning efficiency by focusing effort on weak areas.
+
+---
+
+### Exam Management Domain
+
+#### REQ-023: Topic-Based Practice Exams
+
+**Priority:** Must
+**Category:** Functional
+**Domain:** Exam Management
+
+The system must support creation and delivery of topic-specific practice exams that:
+
+- Target individual weak areas identified from analytics
+- Allow students to select specific topics or categories for focused practice
+- Provide focused assessments before attempting the full exam
+- Track topic-specific improvement over multiple attempts
+- Support configurable question counts per topic (5, 10, 20, custom)
+- Include both adaptive and linear modes for practice
+
+**Rationale:** Topic-focused practice enables targeted improvement and builds confidence in specific knowledge areas.
+
+---
+
+#### REQ-024: Intelligent Exam Scheduling
+
+**Priority:** Should
+**Category:** Functional
+**Domain:** Exam Management
+
+The system must calculate and suggest optimal exam dates based on:
+
+- Current proficiency level (theta)
+- Required topics still to cover
+- Estimated study time needed per topic
+- Student-defined target scores
+- Historical improvement velocity (Δθ / week)
+- Available study hours per week (user input)
+
+The scheduler should:
+- Integrate with gap analysis to predict readiness dates
+- Allow students to set exam date goals and work backwards
+- Provide milestone checkpoints leading to the exam
+- Send reminders for scheduled topic exams and final exam
+
+**Rationale:** Intelligent scheduling helps students plan their preparation timeline and set realistic exam dates.
+
+---
+
+### Administration Domain
+
+#### REQ-025: Admin Question Management Dashboard
+
+**Priority:** Must
+**Category:** Functional
+**Domain:** Administration
+
+The system must provide an administrative dashboard for managing questions and question banks, supporting:
+
+- **CRUD Operations:** Add, edit, delete, and clone questions
+- **Organization:** Organize by categories, topics, and custom criteria
+- **Bulk Operations:** Import/export via CSV, JSON, or Excel
+- **Search & Filter:** Advanced filtering by topic, difficulty, status, author, date
+- **Psychometrics:** Manage difficulty, discrimination, and guessing parameters
+- **Workflow:** Question status management (Draft → Review → Active → Retired)
+- **Audit:** Version history and change audit trail
+- **Preview:** Test question rendering before publishing
+
+**Rationale:** Efficient question management is essential for maintaining high-quality, organized question banks.
+
+---
+
+#### REQ-026: Question Bank Organization
+
+**Priority:** Must
+**Category:** Functional
+**Domain:** Administration
+
+The admin dashboard must support organizing questions into multiple question banks with:
+
+- **Categories:** Configurable categories and subcategories (up to 3 levels deep)
+- **Difficulty:** Standard levels (Easy, Medium, Hard, Expert) or custom scales
+- **Tags:** Topic tags with hierarchical structure matching exam syllabus
+- **Exam Types:** Associate questions with specific exam profiles
+- **Custom Fields:** User-defined metadata fields for domain-specific criteria
+- **Cross-Bank Sharing:** Questions can belong to multiple banks and categories
+- **Statistics:** Per-bank statistics (question count, coverage, difficulty distribution)
+
+**Rationale:** Flexible question organization enables efficient content reuse across different exam types and domains.
+
+---
+
 ## Non-Functional Requirements
 
-### REQ-012: Strategy Pattern Implementation
+### Architecture Domain
+
+#### REQ-012: Strategy Pattern Implementation
 
 **Priority:** Must
 **Category:** Non-Functional
@@ -255,7 +424,7 @@ The backend code must use the Strategy Design Pattern for the scoring engine. Ad
 
 ---
 
-### REQ-013: Service Decoupling
+#### REQ-013: Service Decoupling
 
 **Priority:** Must
 **Category:** Non-Functional
@@ -267,7 +436,9 @@ The Scoring Service (Python) must be completely decoupled from the Content Servi
 
 ---
 
-### REQ-014: Next-Item Latency
+### Performance Domain
+
+#### REQ-014: Next-Item Latency
 
 **Priority:** Must
 **Category:** Non-Functional
@@ -279,7 +450,7 @@ The time between submitting an answer and rendering the next adaptive question m
 
 ---
 
-### REQ-015: Horizontal Scaling
+#### REQ-015: Horizontal Scaling
 
 **Priority:** Must
 **Category:** Non-Functional
@@ -293,7 +464,9 @@ The system must support horizontal scaling via Docker/Kubernetes to handle spike
 
 ## Security Requirements
 
-### REQ-016: Item Exposure Control
+### Security Domain
+
+#### REQ-016: Item Exposure Control
 
 **Priority:** Must
 **Category:** Security
@@ -305,7 +478,7 @@ The item selection algorithm must include a randomness factor or exposure contro
 
 ---
 
-### REQ-017: Anti-Harvesting Protection
+#### REQ-017: Anti-Harvesting Protection
 
 **Priority:** Must
 **Category:** Security
@@ -317,7 +490,9 @@ The API must implement rate limiting and anomaly detection to prevent a single u
 
 ---
 
-### REQ-018: Audit Logging
+### Data Integrity Domain
+
+#### REQ-018: Audit Logging
 
 **Priority:** Must
 **Category:** Security
@@ -329,7 +504,7 @@ Every keystroke, answer change (if allowed), and time-per-item must be logged fo
 
 ---
 
-### REQ-019: ACID Compliance
+#### REQ-019: ACID Compliance
 
 **Priority:** Must
 **Category:** Technical
@@ -364,6 +539,13 @@ Exam results and transactions must be stored in a relational database (PostgreSQ
 | REQ-017 | Anti-Harvesting Protection | Security | Must | US-018 |
 | REQ-018 | Audit Logging | Data Integrity | Must | US-019 |
 | REQ-019 | ACID Compliance | Data Integrity | Must | US-020 |
+| REQ-020 | Student Progress Dashboard | Student Analytics | Must | US-021 |
+| REQ-021 | Post-Exam Performance Analytics | Student Analytics | Must | US-022 |
+| REQ-022 | Study Time Recommendations | Student Analytics | Should | US-023 |
+| REQ-023 | Topic-Based Practice Exams | Exam Management | Must | US-024 |
+| REQ-024 | Intelligent Exam Scheduling | Exam Management | Should | US-025 |
+| REQ-025 | Admin Question Management Dashboard | Administration | Must | US-026 |
+| REQ-026 | Question Bank Organization | Administration | Must | US-027 |
 
 ---
 
@@ -379,6 +561,8 @@ Exam results and transactions must be stored in a relational database (PostgreSQ
 | **SATA** | Select All That Apply - multiple-response item type |
 | **Sympson-Hetter** | Exposure control method that limits item usage probability |
 | **1PL/2PL/3PL** | IRT models with 1, 2, or 3 parameters (difficulty, discrimination, guessing) |
+| **Topic Exam** | Focused practice exam targeting specific subjects or competency areas |
+| **Question Bank** | Organized collection of questions grouped by criteria for exam assembly |
 
 ---
 
@@ -387,3 +571,4 @@ Exam results and transactions must be stored in a relational database (PostgreSQ
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
 | 1.0.0 | 2025-12-22 | Product Team | Initial RCF-compliant PRD with 19 requirements |
+| 1.1.0 | 2026-01-01 | Product Team | Added Student Analytics (REQ-020-022), Exam Management (REQ-023-024), and Administration (REQ-025-026) requirements |
