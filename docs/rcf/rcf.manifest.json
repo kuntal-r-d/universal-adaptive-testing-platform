@@ -7,7 +7,7 @@
     {
       "id": "PRD-001",
       "name": "Universal Adaptive Testing Platform",
-      "path": "PRD-001.json"
+      "path": "prds/PRD-001.json"
     }
   ]
 }
