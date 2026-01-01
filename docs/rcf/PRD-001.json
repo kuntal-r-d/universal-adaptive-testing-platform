@@ -2,7 +2,7 @@
   "$schema": "rcf-prd",
   "prdId": "PRD-001",
   "productName": "Universal Adaptive Testing Platform",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "draft",
   "executiveSummary": "A configurable, extensible adaptive testing engine supporting multiple exam methodologies (CAT, LOFT, Linear) with AI-augmented content authoring and smart analytics. The platform treats exam rules, stopping criteria, and scoring algorithms as configurable metadata rather than hard-coded logic.",
   "problemStatement": "Current adaptive testing platforms are typically hard-coded for specific exam types (e.g., NCLEX, GMAT), making it costly and time-consuming to adapt them for new domains or methodologies. Organizations need a flexible, extensible platform that can support multiple exam types, scoring models, and content domains without requiring core engine modifications.",
@@ -27,7 +27,11 @@
     "Smart Coach analytics including gap analysis and adaptive remediation",
     "Session state management with resume capability",
     "Item exposure control and anti-harvesting protection",
-    "Audit logging and ACID-compliant data storage"
+    "Audit logging and ACID-compliant data storage",
+    "Student Progress Dashboard with post-exam analytics and performance insights",
+    "Topic-based learning path with targeted practice exams",
+    "Intelligent exam scheduling based on study time and topic coverage",
+    "Admin Dashboard for question bank and content management"
   ],
   "outOfScope": [
     "Proctoring and identity verification services (third-party integration only)",
@@ -308,6 +312,111 @@
         "transactions",
         "reliability"
       ]
+    },
+    {
+      "id": "REQ-020",
+      "title": "Student Progress Dashboard",
+      "description": "The system must provide a comprehensive student dashboard displaying progress analytics, performance trends, topic-wise proficiency, and historical exam results with visual charts and graphs.",
+      "category": "functional",
+      "domain": "Student Analytics",
+      "priority": "must",
+      "rationale": "Students need visibility into their progress to stay motivated and make informed study decisions.",
+      "tags": [
+        "dashboard",
+        "analytics",
+        "student",
+        "progress"
+      ]
+    },
+    {
+      "id": "REQ-021",
+      "title": "Post-Exam Performance Analytics",
+      "description": "After every exam completion, the system must display detailed analytics including: overall score, topic-wise performance breakdown, time spent per question, improvement areas, comparison with previous attempts, and specific topics requiring more study time.",
+      "category": "functional",
+      "domain": "Student Analytics",
+      "priority": "must",
+      "rationale": "Immediate feedback after exams helps students understand their strengths and weaknesses while the experience is fresh.",
+      "tags": [
+        "analytics",
+        "performance",
+        "feedback",
+        "post-exam"
+      ]
+    },
+    {
+      "id": "REQ-022",
+      "title": "Study Time Recommendations",
+      "description": "The system must calculate and display recommended study time per topic based on performance gaps, providing specific hour estimates and prioritized topic lists to help students allocate their preparation time effectively.",
+      "category": "functional",
+      "domain": "Student Analytics",
+      "priority": "should",
+      "rationale": "Personalized study time recommendations improve learning efficiency by focusing effort on weak areas.",
+      "tags": [
+        "recommendations",
+        "study-time",
+        "personalization",
+        "planning"
+      ]
+    },
+    {
+      "id": "REQ-023",
+      "title": "Topic-Based Practice Exams",
+      "description": "The system must support creation and delivery of topic-specific practice exams that target individual weak areas, allowing students to take focused assessments on specific topics or categories before attempting the full exam.",
+      "category": "functional",
+      "domain": "Exam Management",
+      "priority": "must",
+      "rationale": "Topic-focused practice enables targeted improvement and builds confidence in specific knowledge areas.",
+      "tags": [
+        "practice-exam",
+        "topic",
+        "targeted-learning",
+        "assessment"
+      ]
+    },
+    {
+      "id": "REQ-024",
+      "title": "Intelligent Exam Scheduling",
+      "description": "The system must calculate and suggest optimal exam dates based on current proficiency, required topics to cover, estimated study time needed, and student-defined target scores. The scheduler should integrate with gap analysis to predict readiness dates.",
+      "category": "functional",
+      "domain": "Exam Management",
+      "priority": "should",
+      "rationale": "Intelligent scheduling helps students plan their preparation timeline and set realistic exam dates.",
+      "tags": [
+        "scheduling",
+        "exam-date",
+        "planning",
+        "prediction"
+      ]
+    },
+    {
+      "id": "REQ-025",
+      "title": "Admin Question Management Dashboard",
+      "description": "The system must provide an administrative dashboard for managing questions and question banks, supporting: adding/editing/deleting questions, organizing by categories and criteria, bulk import/export, filtering and search, psychometric parameter management, and question status workflow.",
+      "category": "functional",
+      "domain": "Administration",
+      "priority": "must",
+      "rationale": "Efficient question management is essential for maintaining high-quality, organized question banks.",
+      "tags": [
+        "admin",
+        "dashboard",
+        "question-management",
+        "content"
+      ]
+    },
+    {
+      "id": "REQ-026",
+      "title": "Question Bank Organization",
+      "description": "The admin dashboard must support organizing questions into multiple question banks with configurable categories, difficulty levels, topic tags, exam types, and custom criteria. Questions can belong to multiple banks and categories.",
+      "category": "functional",
+      "domain": "Administration",
+      "priority": "must",
+      "rationale": "Flexible question organization enables efficient content reuse across different exam types and domains.",
+      "tags": [
+        "question-bank",
+        "organization",
+        "categories",
+        "admin"
+      ]
     }
   ],
   "glossary": {
@@ -319,5 +428,5 @@
     "SATA": "Select All That Apply"
   },
   "createdAt": "2025-12-22T00:00:00Z",
-  "updatedAt": "2025-12-23T04:48:12.818Z"
+  "updatedAt": "2026-01-01T12:00:00.000Z"
 }
