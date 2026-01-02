@@ -1,0 +1,6378 @@
+[
+    {
+      "table_name": "spi_data",
+      "size": "26 GB",
+      "rows": 8047337,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "is_public",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 2
+        },
+        {
+          "column": "date_filed",
+          "type": "date",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "cusip",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "isin",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "trading_jurisdiction",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "issuer",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "distributor",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 8
+        },
+        {
+          "column": "initial_valuation_date",
+          "type": "date",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "initial_valuation_dates",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 10
+        },
+        {
+          "column": "issue_date",
+          "type": "date",
+          "nullable": "YES",
+          "ordinal_position": 11
+        },
+        {
+          "column": "trade_date",
+          "type": "date",
+          "nullable": "YES",
+          "ordinal_position": 12
+        },
+        {
+          "column": "offering_closes",
+          "type": "date",
+          "nullable": "YES",
+          "ordinal_position": 13
+        },
+        {
+          "column": "strike_date",
+          "type": "date",
+          "nullable": "YES",
+          "ordinal_position": 14
+        },
+        {
+          "column": "final_valuation_date",
+          "type": "date",
+          "nullable": "YES",
+          "ordinal_position": 15
+        },
+        {
+          "column": "final_valuation_dates",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 16
+        },
+        {
+          "column": "maturity_date",
+          "type": "date",
+          "nullable": "YES",
+          "ordinal_position": 17
+        },
+        {
+          "column": "principal_amount",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 18
+        },
+        {
+          "column": "open_interest",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 19
+        },
+        {
+          "column": "proportional_principal_amount",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 20
+        },
+        {
+          "column": "investment_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 21
+        },
+        {
+          "column": "document_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 22
+        },
+        {
+          "column": "product_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 23
+        },
+        {
+          "column": "product_subtype",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 24
+        },
+        {
+          "column": "fixed_income_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 25
+        },
+        {
+          "column": "underlying_ticker",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 26
+        },
+        {
+          "column": "multiple_underlyings",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 27
+        },
+        {
+          "column": "coupon_applies",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 28
+        },
+        {
+          "column": "contingent_coupon_applies",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 29
+        },
+        {
+          "column": "memory_coupon_applies",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 30
+        },
+        {
+          "column": "coupon_interval",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 31
+        },
+        {
+          "column": "coupon_schedule",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 32
+        },
+        {
+          "column": "coupon_first_date",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 33
+        },
+        {
+          "column": "coupon_last_date",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 34
+        },
+        {
+          "column": "coupon_observation_date_offset",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 35
+        },
+        {
+          "column": "coupon_barrier",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 36
+        },
+        {
+          "column": "coupon_rate",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 37
+        },
+        {
+          "column": "coupon_rate_per_payment_date",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 38
+        },
+        {
+          "column": "base_rate_",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 39
+        },
+        {
+          "column": "second_base_rate_if_applicable",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 40
+        },
+        {
+          "column": "base_rate_maturity",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 41
+        },
+        {
+          "column": "second_base_rate_maturity_if_applicable",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 42
+        },
+        {
+          "column": "base_rate_currency",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 43
+        },
+        {
+          "column": "second_base_rate_currency_",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 44
+        },
+        {
+          "column": "multiplier",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 45
+        },
+        {
+          "column": "spread",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 46
+        },
+        {
+          "column": "interest_cap",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 47
+        },
+        {
+          "column": "interest_floor",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 48
+        },
+        {
+          "column": "end_of_fixed_rate_period",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 49
+        },
+        {
+          "column": "end_of_floating_rate_period",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 50
+        },
+        {
+          "column": "redemption_notes",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 51
+        },
+        {
+          "column": "issuer_call_applies",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 52
+        },
+        {
+          "column": "issuer_call_interval",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 53
+        },
+        {
+          "column": "issuer_call_first_date",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 54
+        },
+        {
+          "column": "issuer_call_last_date",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 55
+        },
+        {
+          "column": "issuer_call_settlement_date_offset",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 56
+        },
+        {
+          "column": "autocall_applies",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 57
+        },
+        {
+          "column": "call_schedule",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 58
+        },
+        {
+          "column": "autocall_interval",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 59
+        },
+        {
+          "column": "autocall_first_date",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 60
+        },
+        {
+          "column": "autocall_last_date",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 61
+        },
+        {
+          "column": "autocall_settlement_date_offset",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 62
+        },
+        {
+          "column": "autocall_barrier",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 63
+        },
+        {
+          "column": "call_strike_level",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 64
+        },
+        {
+          "column": "digital_strike_level",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 65
+        },
+        {
+          "column": "put_strike_level",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 66
+        },
+        {
+          "column": "knock_in_barrier",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 67
+        },
+        {
+          "column": "knock_in_barrier_event_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 68
+        },
+        {
+          "column": "knock_in_barrier_event_observation_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 69
+        },
+        {
+          "column": "product_description",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 70
+        },
+        {
+          "column": "pricing_supplement_url",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 71
+        },
+        {
+          "column": "sales_concession",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 72
+        },
+        {
+          "column": "proceeds_to_issuer",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 73
+        },
+        {
+          "column": "issue_price",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 74
+        },
+        {
+          "column": "estimated_value",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 75
+        },
+        {
+          "column": "currency",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 76
+        },
+        {
+          "column": "upside_style",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 77
+        },
+        {
+          "column": "additional_upside_style",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 78
+        },
+        {
+          "column": "upside_participation_rate",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 79
+        },
+        {
+          "column": "digital_amount",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 80
+        },
+        {
+          "column": "downside_style",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 81
+        },
+        {
+          "column": "downside_participation_rate",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 82
+        },
+        {
+          "column": "floor",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 83
+        },
+        {
+          "column": "cap",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 84
+        },
+        {
+          "column": "minimum_payout",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 85
+        },
+        {
+          "column": "maximumpayout",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 86
+        },
+        {
+          "column": "settlement_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 87
+        },
+        {
+          "column": "knock_out_barrier_event_applies_to",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 88
+        },
+        {
+          "column": "knock_out_barrier_level",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 89
+        },
+        {
+          "column": "knock_out_barrier_event_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 90
+        },
+        {
+          "column": "knock_out_barrier_event_observation_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 91
+        },
+        {
+          "column": "knock_out_result",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 92
+        },
+        {
+          "column": "rebate_redemption_amount_relative",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 93
+        },
+        {
+          "column": "asset_class",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 94
+        },
+        {
+          "column": "investment_or_leveraged",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 95
+        },
+        {
+          "column": "distributor_group",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 96
+        },
+        {
+          "column": "issuer_group",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 97
+        },
+        {
+          "column": "distributor_category",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 98
+        },
+        {
+          "column": "provider_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 99
+        },
+        {
+          "column": "all_filing_dates",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 100
+        },
+        {
+          "column": "aggregate_principal_amount_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 101
+        },
+        {
+          "column": "basket_weightings_unequal",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 102
+        },
+        {
+          "column": "live_or_not",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 103
+        },
+        {
+          "column": "cash_settlement_amount",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 104
+        },
+        {
+          "column": "annualised_return",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 105
+        },
+        {
+          "column": "date_product_expired",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 106
+        },
+        {
+          "column": "next_coupon_observation_date",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 107
+        },
+        {
+          "column": "next_call_observation_date",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 108
+        },
+        {
+          "column": "next_autocall_barrier_level_",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 109
+        },
+        {
+          "column": "intrinsic_cash_settlement_amount",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 110
+        },
+        {
+          "column": "lifecycle_calculation_date",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 111
+        },
+        {
+          "column": "priip_xml_content",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 112
+        },
+        {
+          "column": "underlying_sector",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 113
+        },
+        {
+          "column": "exercise_dates",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 114
+        },
+        {
+          "column": "payment_dates",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 115
+        },
+        {
+          "column": "autocall_settlement_dates",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 116
+        },
+        {
+          "column": "issuer_settlement_dates",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 117
+        },
+        {
+          "column": "valuation_dates_from_call",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 118
+        },
+        {
+          "column": "valuation_dates_from_coupon",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 119
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 120
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 121
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 122
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 123
+        },
+        {
+          "column": "global_identifier",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 124
+        },
+        {
+          "column": "priip_xml_content_timestamp",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 125
+        },
+        {
+          "column": "term",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 126
+        },
+        {
+          "column": "pc_org",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 127
+        },
+        {
+          "column": "live_or_not_source",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 128
+        },
+        {
+          "column": "is_hidden",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 129
+        },
+        {
+          "column": "expiry_payment_date",
+          "type": "date",
+          "nullable": "YES",
+          "ordinal_position": 130
+        },
+        {
+          "column": "expiry_observation_date",
+          "type": "date",
+          "nullable": "YES",
+          "ordinal_position": 131
+        },
+        {
+          "column": "underlying_ticker_sorted",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 132
+        },
+        {
+          "column": "pricing_supplement_document",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 133
+        },
+        {
+          "column": "wrapper_group",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 134
+        },
+        {
+          "column": "upside_participation_rate_formatted",
+          "type": "numeric",
+          "nullable": "YES",
+          "ordinal_position": 135
+        },
+        {
+          "column": "minimum_payout_formatted",
+          "type": "numeric",
+          "nullable": "YES",
+          "ordinal_position": 136
+        },
+        {
+          "column": "downside_protection_type",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 137
+        },
+        {
+          "column": "downside_protection_subtype",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 138
+        },
+        {
+          "column": "local_coupon_type",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 139
+        },
+        {
+          "column": "payment_details_type",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 140
+        },
+        {
+          "column": "uncapped",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 141
+        },
+        {
+          "column": "coupon_payment_amounts",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 142
+        },
+        {
+          "column": "buffer_amount",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 143
+        },
+        {
+          "column": "maximum_loss_amount",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 144
+        },
+        {
+          "column": "coupon_payment_frequency",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 145
+        },
+        {
+          "column": "non_call_period",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 146
+        },
+        {
+          "column": "underlying_type",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 147
+        },
+        {
+          "column": "call_level",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 148
+        },
+        {
+          "column": "redemption_type",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 149
+        },
+        {
+          "column": "barrier_amount",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 150
+        },
+        {
+          "column": "barrier_type",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 151
+        },
+        {
+          "column": "initial_call_premium",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 152
+        },
+        {
+          "column": "call_premium",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 153
+        },
+        {
+          "column": "call_hurdle",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 154
+        },
+        {
+          "column": "step_up_step_down",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 155
+        },
+        {
+          "column": "payment_detail_subtype",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 156
+        },
+        {
+          "column": "autocall_barrier_levels",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 157
+        },
+        {
+          "column": "coupon_barrier_levels",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 158
+        },
+        {
+          "column": "issuer_call_settlement_amounts",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 159
+        },
+        {
+          "column": "autocall_settlement_amounts",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 160
+        },
+        {
+          "column": "strike_levels",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 161
+        },
+        {
+          "column": "twin_win_downside_participation_rate",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 162
+        },
+        {
+          "column": "buffer_level",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 163
+        },
+        {
+          "column": "knock_in_barrier_low",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 164
+        },
+        {
+          "column": "knock_in_barrier_high",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 165
+        },
+        {
+          "column": "knock_out_upper_barrier_level",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 166
+        },
+        {
+          "column": "knock_out_lower_barrier_level",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 167
+        },
+        {
+          "column": "leveraged_product_multiplier",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 168
+        },
+        {
+          "column": "leveraged_product_stop_loss_level_absolute",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 169
+        },
+        {
+          "column": "leveraged_product_reset_level_absolute",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 170
+        },
+        {
+          "column": "leveraged_product_strike_level_absolute",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 171
+        },
+        {
+          "column": "leveraged_product_exercise_style",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 172
+        },
+        {
+          "column": "leveraged_product_automatic_exercise",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 173
+        },
+        {
+          "column": "leveraged_product_exercise_period_start_date",
+          "type": "date",
+          "nullable": "YES",
+          "ordinal_position": 174
+        },
+        {
+          "column": "leveraged_product_exercise_period_end_date",
+          "type": "date",
+          "nullable": "YES",
+          "ordinal_position": 175
+        },
+        {
+          "column": "leveraged_product_target_leverage_factor",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 176
+        },
+        {
+          "column": "leveraged_product_knock_out_barrier_level_absolute",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 177
+        },
+        {
+          "column": "digital_upper_strike_level_absolute",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 178
+        },
+        {
+          "column": "digital_lower_strike_level_absolute",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 179
+        },
+        {
+          "column": "current_financing_level_absolute",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 180
+        },
+        {
+          "column": "leveraged_product_knock_out_lower_barrier_level_absolute",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 181
+        },
+        {
+          "column": "leveraged_product_knock_out_upper_barrier_level_absolute",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 182
+        },
+        {
+          "column": "exchange_codes",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 183
+        },
+        {
+          "column": "send_to_etlx",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 184
+        },
+        {
+          "column": "sent_to_etlx",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 185
+        },
+        {
+          "column": "principal_amount_in_usd",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 186
+        },
+        {
+          "column": "open_interest_in_usd",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 187
+        },
+        {
+          "column": "sent_to_etlx_status",
+          "type": "jsonb",
+          "nullable": "YES",
+          "ordinal_position": 188
+        },
+        {
+          "column": "coupon_type",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 189
+        },
+        {
+          "column": "underlying_name",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 190
+        },
+        {
+          "column": "underlying_isin",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 191
+        },
+        {
+          "column": "underlying_region",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 192
+        },
+        {
+          "column": "underlying_security_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 193
+        },
+        {
+          "column": "underlying_index_sponsor",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 194
+        },
+        {
+          "column": "underlying_exchange",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 195
+        },
+        {
+          "column": "underlying_ric",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 196
+        },
+        {
+          "column": "underlying_sustainability",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 197
+        },
+        {
+          "column": "underlying_dividend_level",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 198
+        },
+        {
+          "column": "exclude_from_lifecycle",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 199
+        },
+        {
+          "column": "coupon_record_dates",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 200
+        },
+        {
+          "column": "coupon_ex_dates",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 201
+        },
+        {
+          "column": "coupon_record_dates_for_tlx",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 202
+        },
+        {
+          "column": "coupon_ex_dates_for_tlx",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 203
+        },
+        {
+          "column": "distribution_category",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 204
+        },
+        {
+          "column": "coupon_barrier_observation_type",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 205
+        },
+        {
+          "column": "instalment_date",
+          "type": "date",
+          "nullable": "YES",
+          "ordinal_position": 206
+        },
+        {
+          "column": "instalment_amount",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 207
+        },
+        {
+          "column": "instalment_redemption_amount_reduction_percentage",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 208
+        },
+        {
+          "column": "manual",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 209
+        },
+        {
+          "column": "jurisdictions",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 210
+        },
+        {
+          "column": "realised_performance",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 211
+        },
+        {
+          "column": "sent_to_workflow_status",
+          "type": "jsonb",
+          "nullable": "YES",
+          "ordinal_position": 212
+        },
+        {
+          "column": "sent_to_workflow",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 213
+        },
+        {
+          "column": "send_to_workflow",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 214
+        },
+        {
+          "column": "region",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 215
+        },
+        {
+          "column": "credit_reference_asset",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 216
+        },
+        {
+          "column": "credit_reference_asset_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 217
+        },
+        {
+          "column": "credit_event_observation_start_date",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 218
+        },
+        {
+          "column": "credit_event_observation_end_date",
+          "type": "date",
+          "nullable": "YES",
+          "ordinal_position": 219
+        },
+        {
+          "column": "credit_event_observation_end_date_extendable",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 220
+        },
+        {
+          "column": "wholesaler",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 221
+        },
+        {
+          "column": "data_origin",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 222
+        },
+        {
+          "column": "upload_route",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 223
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "gf_subtype_992",
+      "size": "1214 MB",
+      "rows": 7013133,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "tag_id_010",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 2
+        },
+        {
+          "column": "tag_id_248",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "tag_id_900",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "tag_id_001",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "tag_id_462",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "tag_id_204",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "tag_id_113",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 8
+        },
+        {
+          "column": "tag_id_062",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "tag_id_063",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 10
+        },
+        {
+          "column": "tag_id_065",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 11
+        },
+        {
+          "column": "tag_id_243",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 12
+        },
+        {
+          "column": "tag_id_020",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 13
+        },
+        {
+          "column": "tag_id_021",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 14
+        },
+        {
+          "column": "tag_id_032",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 15
+        },
+        {
+          "column": "tag_id_033",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 16
+        },
+        {
+          "column": "tag_id_465",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 17
+        },
+        {
+          "column": "tag_id_466",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 18
+        },
+        {
+          "column": "tag_id_463",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 19
+        },
+        {
+          "column": "tag_id_464",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 20
+        },
+        {
+          "column": "tag_id_025",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 21
+        },
+        {
+          "column": "tag_id_026",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 22
+        },
+        {
+          "column": "tag_id_473",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 23
+        },
+        {
+          "column": "tag_id_053",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 24
+        },
+        {
+          "column": "tag_id_054",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 25
+        },
+        {
+          "column": "tag_id_027",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 26
+        },
+        {
+          "column": "tag_id_028",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 27
+        },
+        {
+          "column": "tag_id_029",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 28
+        },
+        {
+          "column": "tag_id_030",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 29
+        },
+        {
+          "column": "tag_id_031",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 30
+        },
+        {
+          "column": "tag_id_066",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 31
+        },
+        {
+          "column": "tag_id_067",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 32
+        },
+        {
+          "column": "tag_id_245",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 33
+        },
+        {
+          "column": "tag_id_447",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 34
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 35
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 36
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "gf_subtype_985",
+      "size": "1507 MB",
+      "rows": 6375567,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "tag_id_428",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "tag_id_900",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "tag_id_001",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "tag_id_010",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "tag_id_014",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "tag_id_204",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "tag_id_307",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 8
+        },
+        {
+          "column": "tag_id_221",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "tag_id_222",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 10
+        },
+        {
+          "column": "tag_id_223",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 11
+        },
+        {
+          "column": "tag_id_224",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 12
+        },
+        {
+          "column": "tag_id_088",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 13
+        },
+        {
+          "column": "tag_id_419",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 14
+        },
+        {
+          "column": "tag_id_427",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 15
+        },
+        {
+          "column": "tag_id_445",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 16
+        },
+        {
+          "column": "tag_id_447",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 17
+        },
+        {
+          "column": "tag_id_450",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 18
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 19
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 20
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "gf_subtype_986",
+      "size": "529 MB",
+      "rows": 2918778,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "tag_id_427",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "tag_id_900",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "tag_id_001",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "tag_id_010",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "tag_id_249",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "tag_id_226",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "tag_id_225",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 8
+        },
+        {
+          "column": "tag_id_227",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "tag_id_204",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 10
+        },
+        {
+          "column": "tag_id_228",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 11
+        },
+        {
+          "column": "tag_id_229",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 12
+        },
+        {
+          "column": "tag_id_230",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 13
+        },
+        {
+          "column": "tag_id_231",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 14
+        },
+        {
+          "column": "tag_id_232",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 15
+        },
+        {
+          "column": "tag_id_233",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 16
+        },
+        {
+          "column": "tag_id_234",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 17
+        },
+        {
+          "column": "tag_id_235",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 18
+        },
+        {
+          "column": "tag_id_236",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 19
+        },
+        {
+          "column": "tag_id_237",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 20
+        },
+        {
+          "column": "tag_id_238",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 21
+        },
+        {
+          "column": "tag_id_068",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 22
+        },
+        {
+          "column": "tag_id_239",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 23
+        },
+        {
+          "column": "tag_id_447",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 24
+        },
+        {
+          "column": "tag_id_453",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 25
+        },
+        {
+          "column": "tag_id_454",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 26
+        },
+        {
+          "column": "tag_id_457",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 27
+        },
+        {
+          "column": "tag_id_467",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 28
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 29
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 30
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "gf_subtype_984",
+      "size": "325 MB",
+      "rows": 2447412,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "tag_id_010",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 2
+        },
+        {
+          "column": "tag_id_014",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "tag_id_900",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "tag_id_001",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "tag_id_204",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "tag_id_018",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "tag_id_217",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 8
+        },
+        {
+          "column": "tag_id_088",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "tag_id_089",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 10
+        },
+        {
+          "column": "tag_id_218",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 11
+        },
+        {
+          "column": "tag_id_219",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 12
+        },
+        {
+          "column": "tag_id_419",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 13
+        },
+        {
+          "column": "tag_id_447",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 14
+        },
+        {
+          "column": "tag_id_452",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 15
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 16
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 17
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "gf_subtype_983",
+      "size": "1242 MB",
+      "rows": 2413111,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "tag_id_010",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "tag_id_900",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "tag_id_001",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "tag_id_002",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "tag_id_004",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "tag_id_007",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "tag_id_009",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 8
+        },
+        {
+          "column": "tag_id_011",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "tag_id_017",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 10
+        },
+        {
+          "column": "tag_id_019",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 11
+        },
+        {
+          "column": "tag_id_037",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 12
+        },
+        {
+          "column": "tag_id_039",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 13
+        },
+        {
+          "column": "tag_id_041",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 14
+        },
+        {
+          "column": "tag_id_049",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 15
+        },
+        {
+          "column": "tag_id_051",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 16
+        },
+        {
+          "column": "tag_id_052",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 17
+        },
+        {
+          "column": "tag_id_064",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 18
+        },
+        {
+          "column": "tag_id_069",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 19
+        },
+        {
+          "column": "tag_id_070",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 20
+        },
+        {
+          "column": "tag_id_076",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 21
+        },
+        {
+          "column": "tag_id_202",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 22
+        },
+        {
+          "column": "tag_id_203",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 23
+        },
+        {
+          "column": "tag_id_246",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 24
+        },
+        {
+          "column": "tag_id_247",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 25
+        },
+        {
+          "column": "tag_id_080",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 26
+        },
+        {
+          "column": "tag_id_082",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 27
+        },
+        {
+          "column": "tag_id_084",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 28
+        },
+        {
+          "column": "tag_id_086",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 29
+        },
+        {
+          "column": "tag_id_087",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 30
+        },
+        {
+          "column": "tag_id_090",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 31
+        },
+        {
+          "column": "tag_id_091",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 32
+        },
+        {
+          "column": "tag_id_093",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 33
+        },
+        {
+          "column": "tag_id_097",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 34
+        },
+        {
+          "column": "tag_id_099",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 35
+        },
+        {
+          "column": "tag_id_100",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 36
+        },
+        {
+          "column": "tag_id_204",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 37
+        },
+        {
+          "column": "tag_id_114",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 38
+        },
+        {
+          "column": "tag_id_117",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 39
+        },
+        {
+          "column": "tag_id_205",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 40
+        },
+        {
+          "column": "tag_id_211",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 41
+        },
+        {
+          "column": "tag_id_212",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 42
+        },
+        {
+          "column": "tag_id_213",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 43
+        },
+        {
+          "column": "tag_id_214",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 44
+        },
+        {
+          "column": "tag_id_285",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 45
+        },
+        {
+          "column": "tag_id_444",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 46
+        },
+        {
+          "column": "tag_id_447",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 47
+        },
+        {
+          "column": "tag_id_455",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 48
+        },
+        {
+          "column": "tag_id_456",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 49
+        },
+        {
+          "column": "tag_id_468",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 50
+        },
+        {
+          "column": "tag_id_469",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 51
+        },
+        {
+          "column": "tag_id_479",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 52
+        },
+        {
+          "column": "tag_id_470",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 53
+        },
+        {
+          "column": "tag_id_472",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 54
+        },
+        {
+          "column": "tag_id_476",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 55
+        },
+        {
+          "column": "tag_id_477",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 56
+        },
+        {
+          "column": "tag_id_478",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 57
+        },
+        {
+          "column": "tag_id_48",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 58
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 59
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 60
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "gf_subtype_987",
+      "size": "83 MB",
+      "rows": 447733,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "tag_id_428",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "tag_id_900",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "tag_id_001",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "tag_id_010",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "tag_id_014",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "tag_id_088",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "tag_id_204",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 8
+        },
+        {
+          "column": "tag_id_307",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "tag_id_057",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 10
+        },
+        {
+          "column": "tag_id_426",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 11
+        },
+        {
+          "column": "tag_id_243",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 12
+        },
+        {
+          "column": "tag_id_447",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 13
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 14
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 15
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "spi_data_lifecycle",
+      "size": "541 MB",
+      "rows": 30439,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "cusip",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 2
+        },
+        {
+          "column": "spi_id",
+          "type": "text",
+          "nullable": "NO",
+          "ordinal_position": 3
+        },
+        {
+          "column": "isin",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "content",
+          "type": "jsonb",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 6
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 7
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 8
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 9
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "spi_data_locked",
+      "size": "4792 kB",
+      "rows": 25828,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "global_identifier",
+          "type": "text",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "document_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "principal_amount",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "aggregate_principal_amount_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "trading_jurisdiction",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "distributor",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 8
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 9
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 10
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 11
+        },
+        {
+          "column": "manual",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 12
+        },
+        {
+          "column": "distributor_category",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 13
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "perfstats",
+      "size": "4216 kB",
+      "rows": 14053,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "dc",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 2
+        },
+        {
+          "column": "app_name",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "class_name",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "method_name",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "invocations",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "total_time",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "average_time",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 8
+        },
+        {
+          "column": "last_mark_start_time",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "last_mark_end_time",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 10
+        },
+        {
+          "column": "heap_used_start",
+          "type": "bigint",
+          "nullable": "YES",
+          "ordinal_position": 11
+        },
+        {
+          "column": "heap_used_end",
+          "type": "bigint",
+          "nullable": "YES",
+          "ordinal_position": 12
+        },
+        {
+          "column": "heap_used_total_start",
+          "type": "bigint",
+          "nullable": "YES",
+          "ordinal_position": 13
+        },
+        {
+          "column": "heap_used_total_end",
+          "type": "bigint",
+          "nullable": "YES",
+          "ordinal_position": 14
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 15
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 16
+        },
+        {
+          "column": "extra",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 17
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "spi_data_underlyings",
+      "size": "2400 kB",
+      "rows": 9066,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "ticker",
+          "type": "text",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "ric",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "name",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "isin",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "asset_class",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "region",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "sector",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 8
+        },
+        {
+          "column": "security_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "index_sponsor",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 10
+        },
+        {
+          "column": "sustainability",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 11
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 12
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 13
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 14
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 15
+        },
+        {
+          "column": "exchange",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 16
+        },
+        {
+          "column": "dividend_level",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 17
+        },
+        {
+          "column": "valor",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 18
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "spi_data_bids",
+      "size": "1712 kB",
+      "rows": 7724,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "cusip",
+          "type": "text",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "isin",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "bid",
+          "type": "double precision",
+          "nullable": "NO",
+          "ordinal_position": 4
+        },
+        {
+          "column": "bid_created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 5
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 6
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 7
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 8
+        },
+        {
+          "column": "issuer_id",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "ask",
+          "type": "jsonb",
+          "nullable": "YES",
+          "ordinal_position": 10
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "spi_data_sync",
+      "size": "1224 kB",
+      "rows": 6106,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "records_processed",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "elapsed_time",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 3
+        },
+        {
+          "column": "run_date",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 4
+        },
+        {
+          "column": "failure_code",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 6
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 7
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 8
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 9
+        },
+        {
+          "column": "priip_org",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 10
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "spi_data_backtest",
+      "size": "32 MB",
+      "rows": 2489,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "global_identifier",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 2
+        },
+        {
+          "column": "back_test",
+          "type": "jsonb",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "elapsed_time",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "org_id",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 6
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 7
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 8
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 9
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "role_permissions",
+      "size": "200 kB",
+      "rows": 1176,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "role_id",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 2
+        },
+        {
+          "column": "permission_id",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "created_at",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "updated_at",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 5
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "test_table",
+      "size": "136 kB",
+      "rows": 600,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "name",
+          "type": "text",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp without time zone",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp without time zone",
+          "nullable": "YES",
+          "ordinal_position": 4
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "spi_data_organizations",
+      "size": "168 kB",
+      "rows": 398,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "name",
+          "type": "text",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "lei",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "legal_jurisdiction",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "group_name",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "wsd_rating",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 7
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 8
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 9
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 10
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "sequelizemeta",
+      "size": "88 kB",
+      "rows": 243,
+      "columns": [
+        {
+          "column": "name",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 1
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "gf_subtype_910",
+      "size": "96 kB",
+      "rows": 76,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "tag_id_205",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "tag_id_900",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "tag_id_204",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "tag_id_008",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "tag_id_206",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "tag_id_460",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "tag_id_207",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 8
+        },
+        {
+          "column": "tag_id_208",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "tag_id_209",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 10
+        },
+        {
+          "column": "tag_id_210",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 11
+        },
+        {
+          "column": "tag_id_451",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 12
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 13
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 14
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "spi_data_jobs",
+      "size": "72 kB",
+      "rows": 6,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "job_name",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "job_start_time",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 3
+        },
+        {
+          "column": "job_end_time",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "job_exit_code",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "job_error_details",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "job_download_path",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 8
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 10
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 11
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "market_analytics_summary",
+      "size": "64 kB",
+      "rows": 1,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "key",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "data",
+          "type": "jsonb",
+          "nullable": "NO",
+          "ordinal_position": 3
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 4
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 5
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "user",
+      "size": "64 kB",
+      "rows": 1,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "user_uuid",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "type",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "issuer_id",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "first_name",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 5
+        },
+        {
+          "column": "last_name",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 6
+        },
+        {
+          "column": "email",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 7
+        },
+        {
+          "column": "phone",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 8
+        },
+        {
+          "column": "picture",
+          "type": "bytea",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "job_title",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 10
+        },
+        {
+          "column": "crd_number",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 11
+        },
+        {
+          "column": "status",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 12
+        },
+        {
+          "column": "reg_token",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 13
+        },
+        {
+          "column": "unlocking_code",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 14
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 15
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "YES",
+          "ordinal_position": 16
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 17
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 18
+        },
+        {
+          "column": "last_login_at",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 19
+        },
+        {
+          "column": "organisation_id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 20
+        },
+        {
+          "column": "certified_at",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 21
+        },
+        {
+          "column": "certification_level",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 22
+        },
+        {
+          "column": "favourite_cusips",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 23
+        },
+        {
+          "column": "email_preferences",
+          "type": "json",
+          "nullable": "YES",
+          "ordinal_position": 24
+        },
+        {
+          "column": "client_id",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 25
+        },
+        {
+          "column": "currency",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 26
+        },
+        {
+          "column": "daily_email",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 27
+        },
+        {
+          "column": "research_email",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 28
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "cusip_data",
+      "size": "16 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "cusip",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 2
+        },
+        {
+          "column": "isin",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "product_description",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "product_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "issuer",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "principal_amount",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "currency",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 8
+        },
+        {
+          "column": "underlying_name",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "underlying_ticker",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 10
+        },
+        {
+          "column": "trade_date",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 11
+        },
+        {
+          "column": "maturity_date",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 12
+        },
+        {
+          "column": "other",
+          "type": "jsonb",
+          "nullable": "YES",
+          "ordinal_position": 13
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 14
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 15
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 16
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 17
+        },
+        {
+          "column": "offering_closes",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 18
+        },
+        {
+          "column": "document_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 19
+        },
+        {
+          "column": "term",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 20
+        },
+        {
+          "column": "investment_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 21
+        },
+        {
+          "column": "primary_identifier",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 22
+        },
+        {
+          "column": "primary_identifier_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 23
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "gf_missing_tickers",
+      "size": "32 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "global_identifier",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 2
+        },
+        {
+          "column": "isin",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "name",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "sector",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 6
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 7
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "SequelizeMeta",
+      "size": "8192 bytes",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "name",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 1
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "regxchange_pc_report",
+      "size": "40 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "global_identifier",
+          "type": "text",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "issuer",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "trading_jurisdiction",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "kid_link",
+          "type": "ARRAY",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "org_id",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 7
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 8
+        },
+        {
+          "column": "name",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "leverage",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 10
+        },
+        {
+          "column": "maturity_date",
+          "type": "date",
+          "nullable": "YES",
+          "ordinal_position": 11
+        },
+        {
+          "column": "last_updated",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 12
+        },
+        {
+          "column": "pc_status",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 13
+        },
+        {
+          "column": "spi_status",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 14
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "spi_etlx_status",
+      "size": "56 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "global_identifier",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "exports_sent_time",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 3
+        },
+        {
+          "column": "exports_response_time",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 4
+        },
+        {
+          "column": "exports_response_code",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 5
+        },
+        {
+          "column": "event_sent",
+          "type": "jsonb",
+          "nullable": "NO",
+          "ordinal_position": 6
+        },
+        {
+          "column": "exports_response",
+          "type": "jsonb",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 8
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 10
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 11
+        },
+        {
+          "column": "pc_org",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 12
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "rfq_request_log",
+      "size": "32 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "rfq_request_id",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 2
+        },
+        {
+          "column": "rfq_request_id_wsd",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "rfq_request_payload",
+          "type": "jsonb",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "rfq_request_time",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 5
+        },
+        {
+          "column": "rfq_request_response_code",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 6
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 7
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "YES",
+          "ordinal_position": 8
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 9
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 10
+        },
+        {
+          "column": "issuer",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 11
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "rfq_response_log",
+      "size": "32 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "rfq_response_id",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 2
+        },
+        {
+          "column": "rfq_response_id_wsd",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "rfq_response_payload",
+          "type": "jsonb",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "rfq_response_time",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 5
+        },
+        {
+          "column": "rfq_response_response_code",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 6
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 7
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "YES",
+          "ordinal_position": 8
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 9
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 10
+        },
+        {
+          "column": "issuer",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 11
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "spi_etlx_notifications",
+      "size": "24 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "completion",
+          "type": "boolean",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "identifier",
+          "type": "text",
+          "nullable": "NO",
+          "ordinal_position": 3
+        },
+        {
+          "column": "payload",
+          "type": "jsonb",
+          "nullable": "NO",
+          "ordinal_position": 4
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 5
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "user_jurisdictions",
+      "size": "0 bytes",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "jurisdiction_id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "user_id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 3
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "spi_data_aliases",
+      "size": "40 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "bbg_ticker",
+          "type": "text",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "alias",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "basket_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "basket_weight",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 6
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 7
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 8
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 9
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "group",
+      "size": "16 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "owner_id",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 2
+        },
+        {
+          "column": "parent_id",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "name",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 4
+        },
+        {
+          "column": "type",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 5
+        },
+        {
+          "column": "order",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 6
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 7
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "YES",
+          "ordinal_position": 8
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 9
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 10
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "role_users",
+      "size": "8192 bytes",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "role_id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "user_id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 3
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "roles",
+      "size": "16 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "name",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "slug",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 3
+        },
+        {
+          "column": "description",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 5
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 6
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "jurisdictions",
+      "size": "24 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "name",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 2
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 3
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 4
+        },
+        {
+          "column": "region",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 5
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "spi_etlx_csv",
+      "size": "16 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "global_identifier",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "csv_content",
+          "type": "jsonb",
+          "nullable": "NO",
+          "ordinal_position": 3
+        },
+        {
+          "column": "pc_org",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 4
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 5
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 6
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "mdfdeltas",
+      "size": "16 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "ticker",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "prev_price",
+          "type": "real",
+          "nullable": "NO",
+          "ordinal_position": 3
+        },
+        {
+          "column": "current_price",
+          "type": "real",
+          "nullable": "NO",
+          "ordinal_position": 4
+        },
+        {
+          "column": "delta",
+          "type": "real",
+          "nullable": "NO",
+          "ordinal_position": 5
+        },
+        {
+          "column": "delta_percent",
+          "type": "real",
+          "nullable": "NO",
+          "ordinal_position": 6
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 7
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 8
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "permissions",
+      "size": "16 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "name",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "slug",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 3
+        },
+        {
+          "column": "description",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 5
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 6
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "spi_workload_status",
+      "size": "56 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "global_identifier",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "exports_sent_time",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 3
+        },
+        {
+          "column": "exports_response_time",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 4
+        },
+        {
+          "column": "exports_response_code",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 5
+        },
+        {
+          "column": "event_sent",
+          "type": "jsonb",
+          "nullable": "NO",
+          "ordinal_position": 6
+        },
+        {
+          "column": "exports_response",
+          "type": "jsonb",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 8
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 10
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 11
+        },
+        {
+          "column": "pc_org",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 12
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "spi_db_logs",
+      "size": "24 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "bigint",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "global_identifier",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "level",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 3
+        },
+        {
+          "column": "log_message",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 4
+        },
+        {
+          "column": "pc_org",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 6
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 7
+        },
+        {
+          "column": "log_type",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 8
+        },
+        {
+          "column": "app_extra",
+          "type": "jsonb",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "pm2_name",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 10
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "portfolio",
+      "size": "24 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "analyst_email",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "client_email",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 3
+        },
+        {
+          "column": "client_name",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 4
+        },
+        {
+          "column": "currency",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 5
+        },
+        {
+          "column": "global_identifier",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "issuer",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "live_or_not",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 8
+        },
+        {
+          "column": "notional",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 9
+        },
+        {
+          "column": "price_initial",
+          "type": "numeric",
+          "nullable": "NO",
+          "ordinal_position": 10
+        },
+        {
+          "column": "price_current",
+          "type": "numeric",
+          "nullable": "YES",
+          "ordinal_position": 11
+        },
+        {
+          "column": "price_previous",
+          "type": "numeric",
+          "nullable": "YES",
+          "ordinal_position": 12
+        },
+        {
+          "column": "price_ytd",
+          "type": "numeric",
+          "nullable": "YES",
+          "ordinal_position": 13
+        },
+        {
+          "column": "product_type",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 14
+        },
+        {
+          "column": "purchase_date",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 15
+        },
+        {
+          "column": "underlyings",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 16
+        },
+        {
+          "column": "wrapper",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 17
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 18
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "YES",
+          "ordinal_position": 19
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 20
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 21
+        },
+        {
+          "column": "asset_class",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 22
+        },
+        {
+          "column": "spi_product_type",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 23
+        },
+        {
+          "column": "intrinsic_performance",
+          "type": "numeric",
+          "nullable": "YES",
+          "ordinal_position": 24
+        },
+        {
+          "column": "payoff_amount",
+          "type": "numeric",
+          "nullable": "YES",
+          "ordinal_position": 25
+        },
+        {
+          "column": "annualised_return",
+          "type": "numeric",
+          "nullable": "YES",
+          "ordinal_position": 26
+        },
+        {
+          "column": "issue_date",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 27
+        },
+        {
+          "column": "maturity_date",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 28
+        },
+        {
+          "column": "issuer_group",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 29
+        },
+        {
+          "column": "wrapper_group",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 30
+        },
+        {
+          "column": "payment_details_type",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 31
+        },
+        {
+          "column": "underlying_names",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 32
+        },
+        {
+          "column": "realised_performance",
+          "type": "numeric",
+          "nullable": "YES",
+          "ordinal_position": 33
+        },
+        {
+          "column": "payoff",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 34
+        },
+        {
+          "column": "next_observation_date",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 35
+        },
+        {
+          "column": "maturity_date_code",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 36
+        },
+        {
+          "column": "market_value",
+          "type": "numeric",
+          "nullable": "YES",
+          "ordinal_position": 37
+        },
+        {
+          "column": "expiry_date",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 38
+        },
+        {
+          "column": "pc_org",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 39
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "user_group",
+      "size": "0 bytes",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "user_id",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 1
+        },
+        {
+          "column": "group_id",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 2
+        },
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 3
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "gf_pricing_feed",
+      "size": "16 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "day",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 2
+        },
+        {
+          "column": "isin",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "currency",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "prod_cat_l2",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "volume_eur",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 7
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 8
+        },
+        {
+          "column": "first_valuta_date",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 9
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "gf_pa_tracker",
+      "size": "24 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "isin",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 2
+        },
+        {
+          "column": "day",
+          "type": "date",
+          "nullable": "NO",
+          "ordinal_position": 3
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 4
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 5
+        },
+        {
+          "column": "principal_amount",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 6
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "insights",
+      "size": "16 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "title",
+          "type": "text",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "link",
+          "type": "text",
+          "nullable": "NO",
+          "ordinal_position": 3
+        },
+        {
+          "column": "locale",
+          "type": "jsonb",
+          "nullable": "NO",
+          "ordinal_position": 4
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 5
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 6
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 7
+        },
+        {
+          "column": "order",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 8
+        },
+        {
+          "column": "description",
+          "type": "text",
+          "nullable": "NO",
+          "ordinal_position": 9
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "portfolio_by_org",
+      "size": "56 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "analyst_email",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "client_email",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 3
+        },
+        {
+          "column": "client_name",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 4
+        },
+        {
+          "column": "currency",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 5
+        },
+        {
+          "column": "global_identifier",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 6
+        },
+        {
+          "column": "issuer",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "issuer_group",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 8
+        },
+        {
+          "column": "live_or_not",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "notional",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 10
+        },
+        {
+          "column": "payment_details_type",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 11
+        },
+        {
+          "column": "pc_org",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 12
+        },
+        {
+          "column": "price_initial",
+          "type": "numeric",
+          "nullable": "NO",
+          "ordinal_position": 13
+        },
+        {
+          "column": "price_current",
+          "type": "numeric",
+          "nullable": "YES",
+          "ordinal_position": 14
+        },
+        {
+          "column": "price_previous",
+          "type": "numeric",
+          "nullable": "YES",
+          "ordinal_position": 15
+        },
+        {
+          "column": "price_ytd",
+          "type": "numeric",
+          "nullable": "YES",
+          "ordinal_position": 16
+        },
+        {
+          "column": "product_type",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 17
+        },
+        {
+          "column": "purchase_date",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 18
+        },
+        {
+          "column": "underlyings",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 19
+        },
+        {
+          "column": "wrapper",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 20
+        },
+        {
+          "column": "wrapper_group",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 21
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 22
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "YES",
+          "ordinal_position": 23
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 24
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 25
+        },
+        {
+          "column": "annualised_return",
+          "type": "numeric",
+          "nullable": "YES",
+          "ordinal_position": 26
+        },
+        {
+          "column": "issue_date",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 27
+        },
+        {
+          "column": "maturity_date",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 28
+        },
+        {
+          "column": "asset_class",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 29
+        },
+        {
+          "column": "expiry_date",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 30
+        },
+        {
+          "column": "intrinsic_performance",
+          "type": "numeric",
+          "nullable": "YES",
+          "ordinal_position": 31
+        },
+        {
+          "column": "payoff_amount",
+          "type": "numeric",
+          "nullable": "YES",
+          "ordinal_position": 32
+        },
+        {
+          "column": "knock_in_barrier_level",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 33
+        },
+        {
+          "column": "knock_in_barrier_level_high",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 34
+        },
+        {
+          "column": "knock_in_barrier_level_low",
+          "type": "double precision",
+          "nullable": "YES",
+          "ordinal_position": 35
+        },
+        {
+          "column": "market_value",
+          "type": "numeric",
+          "nullable": "YES",
+          "ordinal_position": 36
+        },
+        {
+          "column": "maturity_date_code",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 37
+        },
+        {
+          "column": "next_observation_date",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 38
+        },
+        {
+          "column": "payoff",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 39
+        },
+        {
+          "column": "realised_performance",
+          "type": "numeric",
+          "nullable": "YES",
+          "ordinal_position": 40
+        },
+        {
+          "column": "spi_product_type",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 41
+        },
+        {
+          "column": "underlying_names",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 42
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "spi_db_housekeeping",
+      "size": "24 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "name",
+          "type": "text",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "last_run_start",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "last_run_end",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "last_run_metrics",
+          "type": "jsonb",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "criteria",
+          "type": "jsonb",
+          "nullable": "NO",
+          "ordinal_position": 6
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 7
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 8
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "cusip_fields",
+      "size": "16 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "text",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "name",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 2
+        },
+        {
+          "column": "required",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "is_extra",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "is_unique",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "hidden",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "validation",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "order",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 8
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 9
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 10
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 11
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 12
+        },
+        {
+          "column": "validation_rule",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 13
+        },
+        {
+          "column": "notes",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 14
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "user_views",
+      "size": "24 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "email",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "name",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 3
+        },
+        {
+          "column": "content",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 4
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 5
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 7
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 8
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "portfolio_history",
+      "size": "32 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "date_observed",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "analyst_email",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 3
+        },
+        {
+          "column": "coupon_pa",
+          "type": "numeric",
+          "nullable": "NO",
+          "ordinal_position": 4
+        },
+        {
+          "column": "intrinsic_performance",
+          "type": "numeric",
+          "nullable": "NO",
+          "ordinal_position": 5
+        },
+        {
+          "column": "live_or_not",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "market_value",
+          "type": "numeric",
+          "nullable": "NO",
+          "ordinal_position": 7
+        },
+        {
+          "column": "notional",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 8
+        },
+        {
+          "column": "trade_date",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 9
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 10
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "YES",
+          "ordinal_position": 11
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 12
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 13
+        },
+        {
+          "column": "issue_date",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 14
+        },
+        {
+          "column": "maturity_date",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 15
+        },
+        {
+          "column": "analyst_id",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 16
+        },
+        {
+          "column": "client_email",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 17
+        },
+        {
+          "column": "client_name",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 18
+        },
+        {
+          "column": "underlyings",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 19
+        },
+        {
+          "column": "payment_details_type",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 20
+        },
+        {
+          "column": "wrapper",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 21
+        },
+        {
+          "column": "wrapper_group",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 22
+        },
+        {
+          "column": "global_identifier",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 23
+        },
+        {
+          "column": "realised_performance",
+          "type": "numeric",
+          "nullable": "YES",
+          "ordinal_position": 24
+        },
+        {
+          "column": "issuer_group",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 25
+        },
+        {
+          "column": "price_current",
+          "type": "numeric",
+          "nullable": "YES",
+          "ordinal_position": 26
+        },
+        {
+          "column": "pc_org",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 27
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "coupon_history",
+      "size": "40 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "date_observed",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "estimated",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "global_identifier",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "cash_flow",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "notional",
+          "type": "numeric",
+          "nullable": "NO",
+          "ordinal_position": 6
+        },
+        {
+          "column": "observation_date",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 7
+        },
+        {
+          "column": "payment_date",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 8
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 9
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "YES",
+          "ordinal_position": 10
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 11
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 12
+        },
+        {
+          "column": "coupon_paid",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 13
+        },
+        {
+          "column": "analyst_email",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 14
+        },
+        {
+          "column": "analyst_id",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 15
+        },
+        {
+          "column": "client_email",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 16
+        },
+        {
+          "column": "client_name",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 17
+        },
+        {
+          "column": "underlyings",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 18
+        },
+        {
+          "column": "wrapper",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 19
+        },
+        {
+          "column": "wrapper_group",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 20
+        },
+        {
+          "column": "pc_org",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 21
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "call_history",
+      "size": "48 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "date_observed",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "estimated",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "global_identifier",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "called",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "cash_flow",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "notional",
+          "type": "numeric",
+          "nullable": "NO",
+          "ordinal_position": 7
+        },
+        {
+          "column": "observation_date",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 8
+        },
+        {
+          "column": "payment_date",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 9
+        },
+        {
+          "column": "type",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 10
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 11
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "YES",
+          "ordinal_position": 12
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 13
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 14
+        },
+        {
+          "column": "analyst_email",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 15
+        },
+        {
+          "column": "analyst_id",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 16
+        },
+        {
+          "column": "client_email",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 17
+        },
+        {
+          "column": "client_name",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 18
+        },
+        {
+          "column": "underlyings",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 19
+        },
+        {
+          "column": "wrapper",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 20
+        },
+        {
+          "column": "wrapper_group",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 21
+        },
+        {
+          "column": "pc_org",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 22
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "lowest_underlying_history",
+      "size": "24 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "analyst_email",
+          "type": "character varying",
+          "nullable": "NO",
+          "ordinal_position": 2
+        },
+        {
+          "column": "date_observed",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 3
+        },
+        {
+          "column": "global_identifier",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "intrinsic_performance",
+          "type": "numeric",
+          "nullable": "NO",
+          "ordinal_position": 5
+        },
+        {
+          "column": "notional",
+          "type": "numeric",
+          "nullable": "NO",
+          "ordinal_position": 6
+        },
+        {
+          "column": "ticker",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 8
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 10
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 11
+        },
+        {
+          "column": "analyst_id",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 12
+        },
+        {
+          "column": "client_email",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 13
+        },
+        {
+          "column": "client_name",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 14
+        },
+        {
+          "column": "underlyings",
+          "type": "text",
+          "nullable": "YES",
+          "ordinal_position": 15
+        },
+        {
+          "column": "wrapper",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 16
+        },
+        {
+          "column": "wrapper_group",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 17
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "lifecycle",
+      "size": "40 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "global_identifier",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 2
+        },
+        {
+          "column": "events",
+          "type": "jsonb",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "created_by",
+          "type": "uuid",
+          "nullable": "NO",
+          "ordinal_position": 4
+        },
+        {
+          "column": "updated_by",
+          "type": "uuid",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 6
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "is_org",
+          "type": "boolean",
+          "nullable": "YES",
+          "ordinal_position": 8
+        },
+        {
+          "column": "pc_org",
+          "type": "integer",
+          "nullable": "YES",
+          "ordinal_position": 9
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "table_name": "gf_subtype_916",
+      "size": "24 kB",
+      "rows": 0,
+      "columns": [
+        {
+          "column": "id",
+          "type": "integer",
+          "nullable": "NO",
+          "ordinal_position": 1
+        },
+        {
+          "column": "tag_id_900",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 2
+        },
+        {
+          "column": "tag_id_014",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 3
+        },
+        {
+          "column": "tag_id_013",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 4
+        },
+        {
+          "column": "tag_id_002",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 5
+        },
+        {
+          "column": "tag_id_012",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 6
+        },
+        {
+          "column": "tag_id_204",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 7
+        },
+        {
+          "column": "tag_id_038",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 8
+        },
+        {
+          "column": "tag_id_075",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 9
+        },
+        {
+          "column": "tag_id_403",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 10
+        },
+        {
+          "column": "tag_id_220",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 11
+        },
+        {
+          "column": "tag_id_244",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 12
+        },
+        {
+          "column": "tag_id_901",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 13
+        },
+        {
+          "column": "tag_id_447",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 14
+        },
+        {
+          "column": "tag_id_458",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 15
+        },
+        {
+          "column": "tag_id_471",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 16
+        },
+        {
+          "column": "tag_id_459",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 17
+        },
+        {
+          "column": "tag_id_402",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 18
+        },
+        {
+          "column": "tag_id_405",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 19
+        },
+        {
+          "column": "tag_id_413",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 20
+        },
+        {
+          "column": "tag_id_475",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 21
+        },
+        {
+          "column": "tag_id_481",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 22
+        },
+        {
+          "column": "tag_id_483",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 23
+        },
+        {
+          "column": "tag_id_484",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 24
+        },
+        {
+          "column": "tag_id_485",
+          "type": "character varying",
+          "nullable": "YES",
+          "ordinal_position": 25
+        },
+        {
+          "column": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 26
+        },
+        {
+          "column": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": "NO",
+          "ordinal_position": 27
+        }
+      ],
+      "indexes": []
+    }
+  ]

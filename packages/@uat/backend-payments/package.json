@@ -1,0 +1,24 @@
+{
+  "name": "@uat/backend-payments",
+  "version": "1.0.0",
+  "description": "Stripe payment integration for Universal Adaptive Testing Platform",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test:unit": "node --test --experimental-test-runner --experimental-vm-modules --no-warnings src/**/*.test.ts",
+    "lint": "eslint src/**/*.ts",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": ["payments", "stripe", "subscriptions"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "stripe": "^14.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "typescript": "^5.3.3"
+  }
+}
+
