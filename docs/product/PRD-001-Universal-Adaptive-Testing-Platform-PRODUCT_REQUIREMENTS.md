@@ -1,9 +1,9 @@
 # PRD-001: Universal Adaptive Testing Platform
 
 **Status:** Draft
-**Version:** 1.1.0
+**Version:** 1.2.0
 **Created:** 2025-12-22
-**Last Updated:** 2026-01-01
+**Last Updated:** 2026-01-02
 **Owner:** Product Team
 
 ---
@@ -41,6 +41,8 @@ Current adaptive testing platforms are typically hard-coded for specific exam ty
 5. Deliver actionable analytics through Smart Coach to improve learner outcomes
 6. Empower students with comprehensive progress dashboards and personalized study recommendations
 7. Enable administrators to efficiently manage question banks across multiple categories and criteria
+8. Launch B2C platform with subscription and purchase options for individual students
+9. Provide seamless cross-device experience via web and mobile applications
 
 ---
 
@@ -59,14 +61,18 @@ Current adaptive testing platforms are typically hard-coded for specific exam ty
 - Topic-based learning path with targeted practice exams
 - Intelligent exam scheduling based on study time and topic coverage
 - Admin Dashboard for question bank and content management
+- B2C Platform with exam catalog for individual students
+- Student subscription plans and one-time exam purchases
+- Mobile app support (iOS and Android) with progress sync
 
 ### Out of Scope
 
 - Proctoring and identity verification services (third-party integration only)
-- Mobile native applications (web-responsive design only for MVP)
 - Real-time video-based cheating detection
 - Integration with specific LMS platforms (API-first approach for future integrations)
 - Psychometric research and item calibration studies (platform supports data export)
+- B2B organization features (Phase 2)
+- C2C creator marketplace (Phase 3)
 
 ---
 
@@ -408,6 +414,98 @@ The admin dashboard must support organizing questions into multiple question ban
 
 ---
 
+### B2C Platform Domain
+
+#### REQ-027: Platform Exam Catalog
+
+**Priority:** Must
+**Category:** Functional
+**Domain:** B2C Platform
+
+The system must provide a browsable catalog of platform-owned exams (GMAT, GRE, NCLEX, etc.) that students can discover, preview, and purchase. The catalog must support:
+
+- **Discovery:** Browse by exam type, category, and popularity
+- **Filtering:** Filter by difficulty, price, duration, and ratings
+- **Preview:** Sample questions and exam overview before purchase
+- **Pricing:** Display pricing with subscription vs. one-time options
+- **Search:** Full-text search across exam titles and descriptions
+
+**Rationale:** A well-organized exam catalog is essential for B2C discovery and conversion.
+
+---
+
+#### REQ-028: Student Subscription Plans
+
+**Priority:** Must
+**Category:** Functional
+**Domain:** B2C Platform
+
+The system must support recurring subscription plans that grant students access to multiple exams:
+
+- **Plan Tiers:** Basic (3 exams), Premium (10 exams), Unlimited (all exams)
+- **Billing:** Monthly and annual billing options via Stripe
+- **Management:** Self-service subscription upgrade, downgrade, and cancellation
+- **Access Control:** Automatic access grant/revoke based on subscription status
+- **Trials:** Support for free trial periods
+
+**Rationale:** Subscription revenue provides predictable recurring income and encourages student engagement.
+
+---
+
+#### REQ-029: One-Time Exam Purchases
+
+**Priority:** Must
+**Category:** Functional
+**Domain:** B2C Platform
+
+The system must support one-time purchases of individual exams for students who prefer not to subscribe:
+
+- **Pricing:** Per-exam pricing set by platform administrators
+- **Access:** Permanent access to purchased exam with all features
+- **Payment:** Secure checkout via Stripe with multiple payment methods
+- **Receipt:** Email confirmation and purchase history in student dashboard
+- **Bundles:** Support for discounted exam bundles
+
+**Rationale:** One-time purchases offer flexibility for students who only need specific exams.
+
+---
+
+#### REQ-030: Mobile App Support
+
+**Priority:** Should
+**Category:** Functional
+**Domain:** B2C Platform
+
+The system must provide native mobile applications for iOS and Android that allow students to:
+
+- **Browse:** Discover and purchase exams from the mobile app
+- **Take Exams:** Full exam-taking experience optimized for mobile
+- **Analytics:** View progress dashboard and post-exam analytics
+- **Offline Mode:** Cache exams for offline testing (with sync on reconnect)
+- **Notifications:** Push notifications for study reminders and exam availability
+
+**Rationale:** Mobile apps increase accessibility and allow students to study on-the-go.
+
+---
+
+#### REQ-031: Progress Sync Across Devices
+
+**Priority:** Must
+**Category:** Functional
+**Domain:** B2C Platform
+
+The system must synchronize student progress, exam history, and analytics across all devices in real-time:
+
+- **Seamless Handoff:** Start an exam on one device, continue on another
+- **Real-Time Sync:** Progress updates within 5 seconds across devices
+- **Conflict Resolution:** Handle concurrent edits gracefully
+- **Offline Support:** Queue updates when offline, sync when online
+- **Data Consistency:** Ensure exam state integrity across platforms
+
+**Rationale:** Cross-device sync ensures a seamless experience for students who use multiple devices.
+
+---
+
 ## Non-Functional Requirements
 
 ### Architecture Domain
@@ -546,6 +644,11 @@ Exam results and transactions must be stored in a relational database (PostgreSQ
 | REQ-024 | Intelligent Exam Scheduling | Exam Management | Should | US-025 |
 | REQ-025 | Admin Question Management Dashboard | Administration | Must | US-026 |
 | REQ-026 | Question Bank Organization | Administration | Must | US-027 |
+| REQ-027 | Platform Exam Catalog | B2C Platform | Must | US-028 |
+| REQ-028 | Student Subscription Plans | B2C Platform | Must | US-029 |
+| REQ-029 | One-Time Exam Purchases | B2C Platform | Must | US-030 |
+| REQ-030 | Mobile App Support | B2C Platform | Should | US-031 |
+| REQ-031 | Progress Sync Across Devices | B2C Platform | Must | US-032 |
 
 ---
 
@@ -563,6 +666,9 @@ Exam results and transactions must be stored in a relational database (PostgreSQ
 | **1PL/2PL/3PL** | IRT models with 1, 2, or 3 parameters (difficulty, discrimination, guessing) |
 | **Topic Exam** | Focused practice exam targeting specific subjects or competency areas |
 | **Question Bank** | Organized collection of questions grouped by criteria for exam assembly |
+| **B2C** | Business-to-Consumer - platform selling directly to individual students |
+| **Subscription** | Recurring payment plan granting access to multiple exams |
+| **Progress Sync** | Real-time synchronization of student data across devices |
 
 ---
 
@@ -572,3 +678,4 @@ Exam results and transactions must be stored in a relational database (PostgreSQ
 |---------|------|--------|---------|
 | 1.0.0 | 2025-12-22 | Product Team | Initial RCF-compliant PRD with 19 requirements |
 | 1.1.0 | 2026-01-01 | Product Team | Added Student Analytics (REQ-020-022), Exam Management (REQ-023-024), and Administration (REQ-025-026) requirements |
+| 1.2.0 | 2026-01-02 | Product Team | Added B2C Platform (REQ-027-031) requirements for Phase 1 deployment |

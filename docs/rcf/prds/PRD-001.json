@@ -2,7 +2,7 @@
   "$schema": "rcf-prd",
   "prdId": "PRD-001",
   "productName": "Universal Adaptive Testing Platform",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "draft",
   "executiveSummary": "A configurable, extensible adaptive testing engine supporting multiple exam methodologies (CAT, LOFT, Linear) with AI-augmented content authoring and smart analytics. The platform treats exam rules, stopping criteria, and scoring algorithms as configurable metadata rather than hard-coded logic.",
   "problemStatement": "Current adaptive testing platforms are typically hard-coded for specific exam types (e.g., NCLEX, GMAT), making it costly and time-consuming to adapt them for new domains or methodologies. Organizations need a flexible, extensible platform that can support multiple exam types, scoring models, and content domains without requiring core engine modifications.",
@@ -18,7 +18,9 @@
     "Reduce time-to-market for new exam types by 80% through pluggable strategy architecture",
     "Achieve sub-200ms next-item latency for optimal test-taker experience",
     "Provide AI-augmented content authoring to accelerate question bank development",
-    "Deliver actionable analytics through Smart Coach to improve learner outcomes"
+    "Deliver actionable analytics through Smart Coach to improve learner outcomes",
+    "Launch B2C platform with subscription and purchase options for individual students",
+    "Provide seamless cross-device experience via web and mobile applications"
   ],
   "inScope": [
     "Polymorphic exam engine with configurable algorithms and stopping rules",
@@ -31,14 +33,18 @@
     "Student Progress Dashboard with post-exam analytics and performance insights",
     "Topic-based learning path with targeted practice exams",
     "Intelligent exam scheduling based on study time and topic coverage",
-    "Admin Dashboard for question bank and content management"
+    "Admin Dashboard for question bank and content management",
+    "B2C Platform with exam catalog for individual students",
+    "Student subscription plans and one-time exam purchases",
+    "Mobile app support (iOS and Android) with progress sync"
   ],
   "outOfScope": [
     "Proctoring and identity verification services (third-party integration only)",
-    "Mobile native applications (web-responsive design only for MVP)",
     "Real-time video-based cheating detection",
     "Integration with specific LMS platforms (API-first approach for future integrations)",
-    "Psychometric research and item calibration studies (platform supports data export)"
+    "Psychometric research and item calibration studies (platform supports data export)",
+    "B2B organization features (Phase 2)",
+    "C2C creator marketplace (Phase 3)"
   ],
   "constraints": [
     "Must comply with accessibility standards (WCAG 2.1 AA)",
@@ -417,6 +423,81 @@
         "categories",
         "admin"
       ]
+    },
+    {
+      "id": "REQ-027",
+      "title": "Platform Exam Catalog",
+      "description": "The system must provide a browsable catalog of platform-owned exams (GMAT, GRE, NCLEX, etc.) that students can discover, preview, and purchase. The catalog must support filtering by exam type, difficulty, price, and ratings.",
+      "category": "functional",
+      "domain": "B2C Platform",
+      "priority": "must",
+      "rationale": "A well-organized exam catalog is essential for B2C discovery and conversion.",
+      "tags": [
+        "catalog",
+        "b2c",
+        "discovery",
+        "marketplace"
+      ]
+    },
+    {
+      "id": "REQ-028",
+      "title": "Student Subscription Plans",
+      "description": "The system must support recurring subscription plans (Basic, Premium, Unlimited) that grant students access to multiple exams. Subscriptions must be managed via Stripe with automatic renewal, cancellation, and plan upgrade/downgrade capabilities.",
+      "category": "functional",
+      "domain": "B2C Platform",
+      "priority": "must",
+      "rationale": "Subscription revenue provides predictable recurring income and encourages student engagement.",
+      "tags": [
+        "subscription",
+        "payments",
+        "stripe",
+        "b2c"
+      ]
+    },
+    {
+      "id": "REQ-029",
+      "title": "One-Time Exam Purchases",
+      "description": "The system must support one-time purchases of individual exams for students who prefer not to subscribe. Purchases grant permanent access to the exam with all features including analytics and progress tracking.",
+      "category": "functional",
+      "domain": "B2C Platform",
+      "priority": "must",
+      "rationale": "One-time purchases offer flexibility for students who only need specific exams.",
+      "tags": [
+        "purchase",
+        "payments",
+        "b2c",
+        "access"
+      ]
+    },
+    {
+      "id": "REQ-030",
+      "title": "Mobile App Support",
+      "description": "The system must provide native mobile applications for iOS and Android that allow students to browse exams, take tests, and view analytics. The mobile app must support offline exam caching for uninterrupted testing.",
+      "category": "functional",
+      "domain": "B2C Platform",
+      "priority": "should",
+      "rationale": "Mobile apps increase accessibility and allow students to study on-the-go.",
+      "tags": [
+        "mobile",
+        "ios",
+        "android",
+        "offline"
+      ]
+    },
+    {
+      "id": "REQ-031",
+      "title": "Progress Sync Across Devices",
+      "description": "The system must synchronize student progress, exam history, and analytics across all devices (web and mobile) in real-time. Students should be able to start an exam on one device and continue on another.",
+      "category": "functional",
+      "domain": "B2C Platform",
+      "priority": "must",
+      "rationale": "Cross-device sync ensures a seamless experience for students who use multiple devices.",
+      "tags": [
+        "sync",
+        "cross-device",
+        "progress",
+        "mobile"
+      ]
     }
   ],
   "glossary": {
@@ -428,5 +509,5 @@
     "SATA": "Select All That Apply"
   },
   "createdAt": "2025-12-22T00:00:00Z",
-  "updatedAt": "2026-01-01T12:00:00.000Z"
+  "updatedAt": "2026-01-02T12:00:00.000Z"
 }
