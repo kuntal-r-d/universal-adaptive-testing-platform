@@ -1,0 +1,324 @@
+{
+  "$schema": "rcf-tad",
+  "tadId": "TAD-001",
+  "prdId": "PRD-001",
+  "productName": "Universal Adaptive Testing Platform",
+  "version": "1.0.0",
+  "phase": "Phase 1 - B2C Platform",
+  "status": "draft",
+  "createdAt": "2026-01-02T12:00:00.000Z",
+  "updatedAt": "2026-01-02T12:00:00.000Z",
+  "systemOverview": {
+    "description": "A cloud-native adaptive testing platform built as a TypeScript pnpm monorepo with microservices architecture. Phase 1 focuses on B2C delivery enabling individual students to discover, purchase, and take adaptive exams via web and mobile applications.",
+    "keyCharacteristics": [
+      "Pluggable strategy architecture for multiple exam methodologies",
+      "Real-time adaptive scoring with sub-200ms latency",
+      "Cross-device progress synchronization",
+      "Subscription and one-time purchase payment models",
+      "Native mobile apps with offline support"
+    ]
+  },
+  "principles": [
+    {
+      "name": "Configuration Over Code",
+      "description": "Exam rules, scoring algorithms, and stopping criteria are metadata-driven, not hard-coded"
+    },
+    {
+      "name": "Strategy Pattern for Extensibility",
+      "description": "New exam types can be added by implementing strategy interfaces without core modifications"
+    },
+    {
+      "name": "Service Decoupling",
+      "description": "Scoring, content, and session services communicate via versioned APIs only"
+    },
+    {
+      "name": "Mobile-First Design",
+      "description": "All features work seamlessly across web and mobile with real-time sync"
+    },
+    {
+      "name": "Progressive Enhancement",
+      "description": "Offline-capable with graceful degradation when connectivity is limited"
+    }
+  ],
+  "components": {
+    "applications": [
+      {
+        "name": "api-service",
+        "type": "backend",
+        "description": "Core REST API service handling exams, sessions, users, and content",
+        "technology": "Node.js/Express/TypeScript",
+        "port": 3000,
+        "responsibilities": [
+          "Exam session management",
+          "Question delivery and navigation",
+          "User authentication and authorization",
+          "Payment webhook handling",
+          "Progress sync coordination"
+        ]
+      },
+      {
+        "name": "scoring-service",
+        "type": "backend",
+        "description": "Psychometric scoring service implementing IRT algorithms",
+        "technology": "Python/FastAPI",
+        "port": 3001,
+        "responsibilities": [
+          "Theta estimation (1PL, 2PL, 3PL models)",
+          "Next item selection algorithms",
+          "Exposure control calculations",
+          "Stopping rule evaluation"
+        ]
+      },
+      {
+        "name": "spa-student",
+        "type": "frontend",
+        "description": "Student-facing web application",
+        "technology": "Vue 3/Vite/TypeScript",
+        "responsibilities": [
+          "Exam catalog browsing",
+          "Exam taking interface",
+          "Progress dashboard",
+          "Analytics visualization",
+          "Subscription/purchase management"
+        ]
+      },
+      {
+        "name": "spa-platform-admin",
+        "type": "frontend",
+        "description": "Platform administrator dashboard",
+        "technology": "Vue 3/Vite/TypeScript",
+        "responsibilities": [
+          "Question bank management",
+          "Exam profile configuration",
+          "User management",
+          "Analytics and reporting",
+          "Content workflow"
+        ]
+      },
+      {
+        "name": "mobile-app",
+        "type": "mobile",
+        "description": "Cross-platform mobile application",
+        "technology": "React Native/TypeScript",
+        "responsibilities": [
+          "Exam taking on mobile",
+          "Offline exam caching",
+          "Push notifications",
+          "Progress sync",
+          "Dashboard access"
+        ]
+      }
+    ],
+    "packages": [
+      {
+        "name": "@uat/backend-common",
+        "description": "Shared backend utilities, middleware, and services",
+        "exports": ["logger", "exceptions", "middleware", "database clients"]
+      },
+      {
+        "name": "@uat/backend-scoring",
+        "description": "IRT scoring algorithms and theta estimation",
+        "exports": ["RaschStrategy", "ThreePLStrategy", "ThetaEstimator", "ItemSelector"]
+      },
+      {
+        "name": "@uat/backend-payments",
+        "description": "Stripe integration for subscriptions and purchases",
+        "exports": ["StripeClient", "SubscriptionManager", "PurchaseHandler"]
+      },
+      {
+        "name": "@uat/shared-types",
+        "description": "Shared TypeScript type definitions",
+        "exports": ["ExamTypes", "UserTypes", "SessionTypes", "PaymentTypes"]
+      }
+    ]
+  },
+  "dataArchitecture": {
+    "primaryDatabase": {
+      "type": "PostgreSQL 16",
+      "purpose": "Transactional data with ACID compliance",
+      "tables": [
+        "users",
+        "exam_profiles",
+        "question_banks",
+        "questions",
+        "sessions",
+        "responses",
+        "user_subscriptions",
+        "exam_purchases",
+        "user_progress",
+        "audit_logs"
+      ],
+      "features": ["JSONB for flexible content", "Row-Level Security ready for Phase 2"]
+    },
+    "cache": {
+      "type": "Redis 7",
+      "purpose": "Session state, pre-fetched questions, rate limiting",
+      "patterns": ["Session storage", "Question cache", "Rate limit counters"]
+    },
+    "messageQueue": {
+      "type": "Redis Streams",
+      "purpose": "Async event processing",
+      "events": ["ExamCompleted", "PaymentProcessed", "ProgressUpdated"]
+    }
+  },
+  "integrationArchitecture": {
+    "externalServices": [
+      {
+        "name": "Stripe",
+        "purpose": "Payment processing",
+        "integration": "REST API + Webhooks",
+        "features": ["Subscriptions", "One-time payments", "Invoicing"]
+      },
+      {
+        "name": "Auth0",
+        "purpose": "Authentication",
+        "integration": "OAuth 2.0 / OIDC",
+        "features": ["Social login", "MFA", "JWT tokens"]
+      },
+      {
+        "name": "SendGrid",
+        "purpose": "Transactional email",
+        "integration": "REST API",
+        "features": ["Purchase confirmations", "Study reminders", "Notifications"]
+      },
+      {
+        "name": "Firebase",
+        "purpose": "Mobile push notifications",
+        "integration": "Firebase SDK",
+        "features": ["Push notifications", "Analytics"]
+      }
+    ],
+    "internalAPIs": [
+      {
+        "endpoint": "/api/v1/exams",
+        "methods": ["GET", "POST"],
+        "description": "Exam catalog and profile management"
+      },
+      {
+        "endpoint": "/api/v1/sessions",
+        "methods": ["GET", "POST", "PATCH"],
+        "description": "Exam session lifecycle"
+      },
+      {
+        "endpoint": "/api/v1/questions",
+        "methods": ["GET", "POST", "PUT", "DELETE"],
+        "description": "Question bank CRUD operations"
+      },
+      {
+        "endpoint": "/api/v1/users/progress",
+        "methods": ["GET", "POST"],
+        "description": "User progress and analytics"
+      },
+      {
+        "endpoint": "/api/v1/subscriptions",
+        "methods": ["GET", "POST", "DELETE"],
+        "description": "Subscription management"
+      }
+    ]
+  },
+  "securityArchitecture": {
+    "authentication": {
+      "method": "JWT with Auth0",
+      "tokenExpiry": "15 minutes access, 7 days refresh",
+      "mfa": "Optional, encouraged for admin users"
+    },
+    "authorization": {
+      "model": "RBAC",
+      "roles": ["student", "admin", "content_author", "psychometrician"],
+      "enforcement": "Middleware + database queries"
+    },
+    "dataProtection": {
+      "encryption": "TLS 1.3 in transit, AES-256 at rest",
+      "pii": "Encrypted, access logged",
+      "examContent": "Rate-limited API, no bulk export"
+    },
+    "antiHarvesting": {
+      "rateLimiting": "100 requests/minute per user",
+      "anomalyDetection": "Pattern matching on rapid question access",
+      "exposureControl": "Sympson-Hetter method for item selection"
+    }
+  },
+  "deploymentArchitecture": {
+    "infrastructure": "Kubernetes on AWS EKS",
+    "containerization": "Docker with multi-stage builds",
+    "domains": {
+      "app.uatplatform.com": "Student web application",
+      "admin.uatplatform.com": "Platform admin dashboard",
+      "api.uatplatform.com": "REST API gateway"
+    },
+    "scaling": {
+      "strategy": "Horizontal Pod Autoscaler",
+      "minReplicas": 2,
+      "maxReplicas": 20,
+      "targetCPU": "70%"
+    },
+    "cicd": {
+      "platform": "GitHub Actions",
+      "stages": ["lint", "type-check", "test", "build", "deploy"],
+      "environments": ["development", "staging", "production"]
+    }
+  },
+  "operationalConcerns": {
+    "monitoring": {
+      "metrics": "Prometheus + Grafana",
+      "logging": "Pino → CloudWatch Logs",
+      "tracing": "OpenTelemetry",
+      "alerting": "PagerDuty"
+    },
+    "performance": {
+      "latencySLA": "P95 < 200ms for next-item API",
+      "concurrency": "10,000 concurrent sessions",
+      "uptime": "99.9% availability"
+    },
+    "backup": {
+      "database": "Daily snapshots, 30-day retention",
+      "pointInTime": "Enabled for PostgreSQL",
+      "crossRegion": "Replicated to secondary region"
+    }
+  },
+  "architecturalDecisions": [
+    {
+      "id": "ADR-001",
+      "title": "Strategy Pattern for Exam Methodologies",
+      "decision": "Use Strategy design pattern for scoring and item selection algorithms",
+      "rationale": "Enables adding new exam types without modifying core engine",
+      "traceability": ["REQ-001", "REQ-012"]
+    },
+    {
+      "id": "ADR-002",
+      "title": "PostgreSQL with JSONB for Questions",
+      "decision": "Store question content in JSONB columns",
+      "rationale": "Provides schema flexibility while maintaining ACID compliance",
+      "traceability": ["REQ-004", "REQ-019"]
+    },
+    {
+      "id": "ADR-003",
+      "title": "Redis for Session State",
+      "decision": "Use Redis for active session storage with PostgreSQL backup",
+      "rationale": "Achieves sub-200ms latency for next-item selection",
+      "traceability": ["REQ-002", "REQ-014"]
+    },
+    {
+      "id": "ADR-004",
+      "title": "Stripe for Payments",
+      "decision": "Integrate Stripe for all payment processing",
+      "rationale": "Industry-standard solution with subscription and one-time payment support",
+      "traceability": ["REQ-028", "REQ-029"]
+    },
+    {
+      "id": "ADR-005",
+      "title": "React Native for Mobile",
+      "decision": "Build mobile app with React Native for iOS and Android",
+      "rationale": "Code sharing with web, strong TypeScript support, native performance",
+      "traceability": ["REQ-030", "REQ-031"]
+    },
+    {
+      "id": "ADR-006",
+      "title": "Python for Scoring Service",
+      "decision": "Implement scoring service in Python with FastAPI",
+      "rationale": "Access to statistical libraries (NumPy, SciPy) for IRT implementations",
+      "traceability": ["REQ-012", "REQ-013"]
+    }
+  ]
+}
+
