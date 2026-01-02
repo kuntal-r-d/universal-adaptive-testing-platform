@@ -1,0 +1,737 @@
+{
+  "$schema": "rcf-user-stories",
+  "prdId": "PRD-001",
+  "version": "1.0.0",
+  "generatedAt": "2026-01-02T12:00:00.000Z",
+  "stories": [
+    {
+      "id": "US-001",
+      "title": "Configure Exam Methodology",
+      "persona": "Test Administrator",
+      "goal": "configure different exam methodologies (CAT, LOFT, Linear) through a single interface",
+      "benefit": "deploy new exam types without requiring code changes",
+      "requirementIds": ["REQ-001"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-001",
+          "description": "Given the admin dashboard, when I create a new exam profile, then I can select from available methodologies (CAT, LOFT, Linear, Section-Adaptive)"
+        },
+        {
+          "id": "AC-002",
+          "description": "Given a CAT exam profile, when I configure scoring parameters, then I can set IRT model type, theta bounds, and stopping criteria"
+        },
+        {
+          "id": "AC-003",
+          "description": "Given a configured exam profile, when the system loads it, then the correct strategy is dynamically applied without restart"
+        }
+      ]
+    },
+    {
+      "id": "US-002",
+      "title": "Add New Exam Type",
+      "persona": "System Integrator",
+      "goal": "add a new exam type by creating a strategy class",
+      "benefit": "extend the platform without modifying core engine code",
+      "requirementIds": ["REQ-001"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-004",
+          "description": "Given the strategy interface, when I implement a new scoring strategy, then it can be registered and used by exam profiles"
+        },
+        {
+          "id": "AC-005",
+          "description": "Given a new strategy class, when I deploy it, then existing exams continue to work unchanged"
+        }
+      ]
+    },
+    {
+      "id": "US-003",
+      "title": "Resume Interrupted Exam",
+      "persona": "Test Taker",
+      "goal": "resume an exam that was interrupted",
+      "benefit": "continue from where I left off without losing progress",
+      "requirementIds": ["REQ-002"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-006",
+          "description": "Given an active exam session that was interrupted, when I return and authenticate, then I see the option to resume my exam"
+        },
+        {
+          "id": "AC-007",
+          "description": "Given a resumed session, when I continue, then my previous answers, current question, and remaining time are restored"
+        },
+        {
+          "id": "AC-008",
+          "description": "Given a session interruption, when the system saves state, then it completes within 2 seconds"
+        }
+      ]
+    },
+    {
+      "id": "US-004",
+      "title": "Navigate Exam Questions",
+      "persona": "Test Taker",
+      "goal": "navigate between questions according to the exam's rules",
+      "benefit": "review and change answers when permitted by the exam type",
+      "requirementIds": ["REQ-003"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-009",
+          "description": "Given a linear exam with review enabled, when I complete a question, then I can go back to previous questions"
+        },
+        {
+          "id": "AC-010",
+          "description": "Given a CAT exam, when I answer a question, then I cannot go back (forward-only navigation)"
+        },
+        {
+          "id": "AC-011",
+          "description": "Given a section-adaptive exam, when I finish a section, then I cannot return to that section"
+        }
+      ]
+    },
+    {
+      "id": "US-005",
+      "title": "Store Flexible Question Content",
+      "persona": "Content Author",
+      "goal": "create questions with varied content structures",
+      "benefit": "support different question types and domains without schema changes",
+      "requirementIds": ["REQ-004"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-012",
+          "description": "Given the question editor, when I create a multiple-choice question, then I can add text, images, and formatted content"
+        },
+        {
+          "id": "AC-013",
+          "description": "Given the question editor, when I create a SATA question, then I can specify multiple correct answers"
+        },
+        {
+          "id": "AC-014",
+          "description": "Given the database, when questions are stored, then they use JSONB allowing schema flexibility"
+        }
+      ]
+    },
+    {
+      "id": "US-006",
+      "title": "Tag Questions Hierarchically",
+      "persona": "Content Author",
+      "goal": "organize questions using a hierarchical tag system",
+      "benefit": "easily find and reuse questions across different exams",
+      "requirementIds": ["REQ-005"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-015",
+          "description": "Given a question, when I add tags, then I can select from a hierarchical taxonomy tree"
+        },
+        {
+          "id": "AC-016",
+          "description": "Given a tagged question, when I search by parent tag, then all questions with child tags are also returned"
+        },
+        {
+          "id": "AC-017",
+          "description": "Given the tag tree, when I add a new tag category, then it can be nested up to 5 levels deep"
+        }
+      ]
+    },
+    {
+      "id": "US-007",
+      "title": "Manage Psychometric Parameters",
+      "persona": "Psychometrician",
+      "goal": "set and update psychometric parameters for questions",
+      "benefit": "ensure accurate adaptive scoring using calibrated item parameters",
+      "requirementIds": ["REQ-006"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-018",
+          "description": "Given a question, when I edit it, then I can set difficulty (beta), discrimination (alpha), and guessing (gamma) parameters"
+        },
+        {
+          "id": "AC-019",
+          "description": "Given psychometric data from calibration, when I import it, then parameters are updated in bulk"
+        },
+        {
+          "id": "AC-020",
+          "description": "Given a question without parameters, when used in CAT, then default values are applied with a warning"
+        }
+      ]
+    },
+    {
+      "id": "US-008",
+      "title": "Generate Questions with AI",
+      "persona": "Content Author",
+      "goal": "use AI to generate draft questions",
+      "benefit": "accelerate question bank development",
+      "requirementIds": ["REQ-007"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-021",
+          "description": "Given the content authoring interface, when I provide a topic and parameters, then AI generates draft questions"
+        },
+        {
+          "id": "AC-022",
+          "description": "Given AI-generated questions, when created, then they are marked as DRAFT status"
+        },
+        {
+          "id": "AC-023",
+          "description": "Given AI generation, when I review output, then I can edit, accept, or reject each question"
+        }
+      ]
+    },
+    {
+      "id": "US-009",
+      "title": "Approve Draft Questions",
+      "persona": "Content Author",
+      "goal": "review and approve draft questions through a workflow",
+      "benefit": "ensure all published questions meet quality standards",
+      "requirementIds": ["REQ-008"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-024",
+          "description": "Given a draft question, when I submit for review, then it moves to PENDING_REVIEW status"
+        },
+        {
+          "id": "AC-025",
+          "description": "Given a pending question, when a reviewer approves it, then it moves to ACTIVE status"
+        },
+        {
+          "id": "AC-026",
+          "description": "Given an active question, when I need to retire it, then it moves to RETIRED status and is excluded from new exams"
+        }
+      ]
+    },
+    {
+      "id": "US-010",
+      "title": "View Learning Gaps",
+      "persona": "Test Taker",
+      "goal": "see where my ability stands compared to the target",
+      "benefit": "understand what I need to improve to pass the exam",
+      "requirementIds": ["REQ-009"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-027",
+          "description": "Given my dashboard, when I view gap analysis, then I see my current theta vs target theta"
+        },
+        {
+          "id": "AC-028",
+          "description": "Given gap analysis, when displayed, then topics where I'm below target are highlighted"
+        },
+        {
+          "id": "AC-029",
+          "description": "Given topic gaps, when I click on one, then I see specific weak areas within that topic"
+        }
+      ]
+    },
+    {
+      "id": "US-011",
+      "title": "Predict Readiness Date",
+      "persona": "Test Taker",
+      "goal": "know when I'll be ready to pass the exam",
+      "benefit": "plan my study schedule and exam date effectively",
+      "requirementIds": ["REQ-010"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-030",
+          "description": "Given my progress history, when I view predictions, then I see an estimated readiness date"
+        },
+        {
+          "id": "AC-031",
+          "description": "Given my improvement velocity, when calculated, then the readiness date adjusts based on my learning rate"
+        },
+        {
+          "id": "AC-032",
+          "description": "Given insufficient data, when prediction is unavailable, then I see a message explaining why"
+        }
+      ]
+    },
+    {
+      "id": "US-012",
+      "title": "Get Personalized Study Tasks",
+      "persona": "Test Taker",
+      "goal": "receive targeted study recommendations",
+      "benefit": "focus my study time on areas that need the most improvement",
+      "requirementIds": ["REQ-011"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-033",
+          "description": "Given my performance data, when I request recommendations, then I receive prioritized study tasks"
+        },
+        {
+          "id": "AC-034",
+          "description": "Given study tasks, when displayed, then they link to relevant practice questions or content"
+        },
+        {
+          "id": "AC-035",
+          "description": "Given completed tasks, when I mark them done, then my recommendations update accordingly"
+        }
+      ]
+    },
+    {
+      "id": "US-013",
+      "title": "Implement Scoring Strategy",
+      "persona": "System Integrator",
+      "goal": "add new scoring algorithms using the strategy pattern",
+      "benefit": "extend scoring capabilities without modifying core code",
+      "requirementIds": ["REQ-012"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-036",
+          "description": "Given the scoring service, when I implement a new strategy, then it follows the defined interface"
+        },
+        {
+          "id": "AC-037",
+          "description": "Given multiple strategies, when an exam selects one, then only that strategy is invoked"
+        },
+        {
+          "id": "AC-038",
+          "description": "Given a strategy implementation, when I deploy it, then unit tests verify correct behavior"
+        }
+      ]
+    },
+    {
+      "id": "US-014",
+      "title": "Call Scoring Service",
+      "persona": "System Integrator",
+      "goal": "call the scoring service through a defined API",
+      "benefit": "integrate scoring independently from content management",
+      "requirementIds": ["REQ-013"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-039",
+          "description": "Given the API gateway, when I call the scoring endpoint, then it routes to the scoring service"
+        },
+        {
+          "id": "AC-040",
+          "description": "Given a scoring request, when processed, then the response includes theta estimate and standard error"
+        },
+        {
+          "id": "AC-041",
+          "description": "Given service versioning, when APIs change, then old versions remain available during transition"
+        }
+      ]
+    },
+    {
+      "id": "US-015",
+      "title": "Receive Next Question Quickly",
+      "persona": "Test Taker",
+      "goal": "receive the next adaptive question without noticeable delay",
+      "benefit": "have a smooth testing experience without frustrating waits",
+      "requirementIds": ["REQ-014"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-042",
+          "description": "Given I submit an answer, when the next question loads, then it appears within 200ms (P95)"
+        },
+        {
+          "id": "AC-043",
+          "description": "Given high load, when 1000 concurrent users submit answers, then P95 latency remains under 200ms"
+        },
+        {
+          "id": "AC-044",
+          "description": "Given question pre-fetching, when I'm answering, then the next likely question is cached"
+        }
+      ]
+    },
+    {
+      "id": "US-016",
+      "title": "Scale During Peak Periods",
+      "persona": "Test Administrator",
+      "goal": "handle large numbers of concurrent test-takers",
+      "benefit": "ensure all students can test during high-demand periods",
+      "requirementIds": ["REQ-015"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-045",
+          "description": "Given Kubernetes deployment, when load increases, then pods auto-scale horizontally"
+        },
+        {
+          "id": "AC-046",
+          "description": "Given 10,000 concurrent sessions, when all are active, then system performance remains stable"
+        },
+        {
+          "id": "AC-047",
+          "description": "Given load decrease, when traffic drops, then pods scale down to save resources"
+        }
+      ]
+    },
+    {
+      "id": "US-017",
+      "title": "Control Item Exposure",
+      "persona": "Psychometrician",
+      "goal": "prevent individual questions from being overexposed",
+      "benefit": "maintain test security and item validity",
+      "requirementIds": ["REQ-016"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-048",
+          "description": "Given item selection, when choosing next question, then exposure control limits are applied"
+        },
+        {
+          "id": "AC-049",
+          "description": "Given exposure statistics, when I review them, then I see usage rates per item"
+        },
+        {
+          "id": "AC-050",
+          "description": "Given overexposed items, when limits are reached, then they are temporarily excluded from selection"
+        }
+      ]
+    },
+    {
+      "id": "US-018",
+      "title": "Prevent Question Harvesting",
+      "persona": "Test Administrator",
+      "goal": "detect and prevent attempts to collect questions",
+      "benefit": "protect the question bank from theft",
+      "requirementIds": ["REQ-017"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-051",
+          "description": "Given API requests, when rate limits are exceeded, then further requests are blocked"
+        },
+        {
+          "id": "AC-052",
+          "description": "Given unusual patterns, when detected, then an alert is triggered for review"
+        },
+        {
+          "id": "AC-053",
+          "description": "Given a blocked user, when they attempt access, then they see a security notice"
+        }
+      ]
+    },
+    {
+      "id": "US-019",
+      "title": "Review Audit Logs",
+      "persona": "Test Administrator",
+      "goal": "review complete logs of test-taker actions",
+      "benefit": "investigate suspicious behavior and defend score validity",
+      "requirementIds": ["REQ-018"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-054",
+          "description": "Given a completed exam, when I view audit logs, then I see all actions with timestamps"
+        },
+        {
+          "id": "AC-055",
+          "description": "Given audit logs, when stored, then they are immutable and tamper-evident"
+        },
+        {
+          "id": "AC-056",
+          "description": "Given audit requirements, when querying logs, then I can filter by session, user, or time range"
+        }
+      ]
+    },
+    {
+      "id": "US-020",
+      "title": "Ensure Exam Results Persist",
+      "persona": "Test Taker",
+      "goal": "trust that my exam results are safely stored",
+      "benefit": "know my results won't be lost due to technical issues",
+      "requirementIds": ["REQ-019"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-057",
+          "description": "Given exam completion, when results are saved, then they use database transactions"
+        },
+        {
+          "id": "AC-058",
+          "description": "Given a network failure during save, when connection is restored, then the save completes"
+        },
+        {
+          "id": "AC-059",
+          "description": "Given saved results, when queried, then they are consistent and complete"
+        }
+      ]
+    },
+    {
+      "id": "US-021",
+      "title": "View Progress Dashboard",
+      "persona": "Test Taker",
+      "goal": "see my overall learning progress in one place",
+      "benefit": "stay motivated and track my improvement over time",
+      "requirementIds": ["REQ-020"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-060",
+          "description": "Given my dashboard, when I log in, then I see progress charts showing ability trends"
+        },
+        {
+          "id": "AC-061",
+          "description": "Given multiple exams taken, when displayed, then I see historical results and comparisons"
+        },
+        {
+          "id": "AC-062",
+          "description": "Given topic proficiency, when visualized, then I see a breakdown by subject area"
+        }
+      ]
+    },
+    {
+      "id": "US-022",
+      "title": "Review Post-Exam Analytics",
+      "persona": "Test Taker",
+      "goal": "understand my performance immediately after an exam",
+      "benefit": "identify strengths and weaknesses while the experience is fresh",
+      "requirementIds": ["REQ-021"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-063",
+          "description": "Given exam completion, when results display, then I see overall score and percentile"
+        },
+        {
+          "id": "AC-064",
+          "description": "Given post-exam analytics, when viewing, then I see topic-wise performance breakdown"
+        },
+        {
+          "id": "AC-065",
+          "description": "Given time data, when displayed, then I see average time per question and outliers"
+        },
+        {
+          "id": "AC-066",
+          "description": "Given previous attempts, when compared, then I see improvement or regression by topic"
+        }
+      ]
+    },
+    {
+      "id": "US-023",
+      "title": "Get Study Time Recommendations",
+      "persona": "Test Taker",
+      "goal": "know how much time to spend on each topic",
+      "benefit": "allocate my limited study time effectively",
+      "requirementIds": ["REQ-022"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-067",
+          "description": "Given my performance gaps, when I view recommendations, then I see estimated hours per topic"
+        },
+        {
+          "id": "AC-068",
+          "description": "Given prioritized topics, when displayed, then they are ordered by impact on overall score"
+        },
+        {
+          "id": "AC-069",
+          "description": "Given a target exam date, when I set it, then recommendations adjust to fit the timeline"
+        }
+      ]
+    },
+    {
+      "id": "US-024",
+      "title": "Take Topic-Focused Practice Exam",
+      "persona": "Test Taker",
+      "goal": "practice questions from specific weak topics",
+      "benefit": "improve targeted areas before the full exam",
+      "requirementIds": ["REQ-023"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-070",
+          "description": "Given my dashboard, when I select a weak topic, then I can start a focused practice exam"
+        },
+        {
+          "id": "AC-071",
+          "description": "Given a topic exam, when I complete it, then I see topic-specific analytics"
+        },
+        {
+          "id": "AC-072",
+          "description": "Given topic practice history, when reviewed, then I see improvement trends for that topic"
+        }
+      ]
+    },
+    {
+      "id": "US-025",
+      "title": "Schedule Exam Intelligently",
+      "persona": "Test Taker",
+      "goal": "know the best date to take my exam",
+      "benefit": "maximize my chances of passing by testing when ready",
+      "requirementIds": ["REQ-024"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-073",
+          "description": "Given my current proficiency, when I request scheduling help, then I see a suggested exam date"
+        },
+        {
+          "id": "AC-074",
+          "description": "Given a target score, when I set it, then the suggested date accounts for the gap"
+        },
+        {
+          "id": "AC-075",
+          "description": "Given my study velocity, when calculated, then the prediction uses my historical learning rate"
+        }
+      ]
+    },
+    {
+      "id": "US-026",
+      "title": "Manage Questions in Admin Dashboard",
+      "persona": "Test Administrator",
+      "goal": "efficiently manage the question bank",
+      "benefit": "maintain high-quality, organized question content",
+      "requirementIds": ["REQ-025"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-076",
+          "description": "Given the admin dashboard, when I access questions, then I can add, edit, and delete them"
+        },
+        {
+          "id": "AC-077",
+          "description": "Given bulk operations, when I import questions, then I can use CSV or JSON formats"
+        },
+        {
+          "id": "AC-078",
+          "description": "Given search and filter, when I query, then I can find questions by topic, difficulty, or status"
+        },
+        {
+          "id": "AC-079",
+          "description": "Given question preview, when I test rendering, then I see exactly what test-takers will see"
+        }
+      ]
+    },
+    {
+      "id": "US-027",
+      "title": "Organize Question Banks",
+      "persona": "Test Administrator",
+      "goal": "organize questions into logical banks and categories",
+      "benefit": "efficiently reuse content across multiple exam types",
+      "requirementIds": ["REQ-026"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-080",
+          "description": "Given the admin dashboard, when I create a question bank, then I can assign categories and metadata"
+        },
+        {
+          "id": "AC-081",
+          "description": "Given a question, when I assign it, then it can belong to multiple banks"
+        },
+        {
+          "id": "AC-082",
+          "description": "Given bank statistics, when I view them, then I see question counts and coverage metrics"
+        }
+      ]
+    },
+    {
+      "id": "US-028",
+      "title": "Browse Exam Catalog",
+      "persona": "Test Taker",
+      "goal": "discover and explore available exams",
+      "benefit": "find the right exam for my certification goals",
+      "requirementIds": ["REQ-027"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-083",
+          "description": "Given the platform homepage, when I browse exams, then I see a catalog with categories"
+        },
+        {
+          "id": "AC-084",
+          "description": "Given the catalog, when I filter by exam type or price, then results update accordingly"
+        },
+        {
+          "id": "AC-085",
+          "description": "Given an exam listing, when I click it, then I see details including sample questions"
+        },
+        {
+          "id": "AC-086",
+          "description": "Given search, when I type a query, then relevant exams are shown with highlighted matches"
+        }
+      ]
+    },
+    {
+      "id": "US-029",
+      "title": "Subscribe to Exam Plans",
+      "persona": "Test Taker",
+      "goal": "subscribe to access multiple exams",
+      "benefit": "get better value with bundled exam access",
+      "requirementIds": ["REQ-028"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-087",
+          "description": "Given subscription plans, when I view them, then I see Basic, Premium, and Unlimited tiers"
+        },
+        {
+          "id": "AC-088",
+          "description": "Given plan selection, when I subscribe, then payment is processed via Stripe"
+        },
+        {
+          "id": "AC-089",
+          "description": "Given an active subscription, when I access exams, then included exams are unlocked"
+        },
+        {
+          "id": "AC-090",
+          "description": "Given subscription management, when I upgrade or cancel, then changes take effect immediately"
+        }
+      ]
+    },
+    {
+      "id": "US-030",
+      "title": "Purchase Individual Exams",
+      "persona": "Test Taker",
+      "goal": "buy a single exam without subscribing",
+      "benefit": "pay only for what I need",
+      "requirementIds": ["REQ-029"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-091",
+          "description": "Given an exam listing, when I click purchase, then I can complete checkout with Stripe"
+        },
+        {
+          "id": "AC-092",
+          "description": "Given a completed purchase, when confirmed, then I have permanent access to that exam"
+        },
+        {
+          "id": "AC-093",
+          "description": "Given my purchase history, when I view it, then I see all purchased exams and receipts"
+        },
+        {
+          "id": "AC-094",
+          "description": "Given exam bundles, when available, then I can purchase multiple exams at a discount"
+        }
+      ]
+    },
+    {
+      "id": "US-031",
+      "title": "Use Mobile App",
+      "persona": "Test Taker",
+      "goal": "access exams and analytics on my phone",
+      "benefit": "study anywhere, anytime",
+      "requirementIds": ["REQ-030"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-095",
+          "description": "Given the mobile app, when I log in, then I see my dashboard and available exams"
+        },
+        {
+          "id": "AC-096",
+          "description": "Given an exam on mobile, when I take it, then the experience is optimized for touch"
+        },
+        {
+          "id": "AC-097",
+          "description": "Given offline mode, when enabled, then I can take cached exams without internet"
+        },
+        {
+          "id": "AC-098",
+          "description": "Given push notifications, when enabled, then I receive study reminders"
+        }
+      ]
+    },
+    {
+      "id": "US-032",
+      "title": "Sync Progress Across Devices",
+      "persona": "Test Taker",
+      "goal": "access my progress from any device",
+      "benefit": "seamlessly switch between devices without losing work",
+      "requirementIds": ["REQ-031"],
+      "acceptanceCriteria": [
+        {
+          "id": "AC-099",
+          "description": "Given I start an exam on web, when I open the mobile app, then I can continue from where I left off"
+        },
+        {
+          "id": "AC-100",
+          "description": "Given progress updates, when synced, then changes appear across devices within 5 seconds"
+        },
+        {
+          "id": "AC-101",
+          "description": "Given offline changes, when I reconnect, then they sync automatically without data loss"
+        },
+        {
+          "id": "AC-102",
+          "description": "Given concurrent edits, when conflicts occur, then the most recent change wins with notification"
+        }
+      ]
+    }
+  ]
+}
+
