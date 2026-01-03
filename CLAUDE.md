@@ -32,8 +32,9 @@ LiteLLM provides a unified interface for AI-augmented features:
 
 ## RCF Framework
 This project follows the Requirements Confidence Framework (RCF):
-- **PRD-001**: 19 requirements defining system capabilities
-- **User Stories**: 20 user stories with 60 acceptance criteria
+- **PRD-001**: 31 requirements (24 MUST, 5 SHOULD, 1 COULD)
+- **User Stories**: 32 user stories with 104 acceptance criteria
+- **TAD-001**: 10 architectural decisions
 - All code should trace back to requirements via RCF comments
 
 ## Key Requirements (REQ-XXX)
