@@ -9,16 +9,7 @@
       "name": "Universal Adaptive Testing Platform",
       "path": "prds/PRD-001.json",
       "userStoriesPath": "prds/PRD-001-user-stories.json",
-      "tadPath": "tads/TAD-001.json",
-      "buildSequences": [
-        "build-sequences/BS-001.json",
-        "build-sequences/BS-002.json",
-        "build-sequences/BS-003.json",
-        "build-sequences/BS-004.json",
-        "build-sequences/BS-005.json",
-        "build-sequences/BS-006.json",
-        "build-sequences/BS-007.json"
-      ]
+      "tadPath": "tads/TAD-001.json"
     }
   ]
 }
