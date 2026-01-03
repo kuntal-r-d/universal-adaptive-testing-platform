@@ -7,9 +7,9 @@
     {
       "id": "PRD-001",
       "name": "Universal Adaptive Testing Platform",
-      "path": "prds/PRD-001.json",
-      "userStoriesPath": "prds/PRD-001-user-stories.json",
-      "tadPath": "tads/TAD-001.json"
+      "path": "docs/rcf/prds/PRD-001.json",
+      "userStoriesPath": "docs/rcf/prds/PRD-001-user-stories.json",
+      "tadPath": "docs/rcf/tads/TAD-001.json"
     }
   ]
 }
