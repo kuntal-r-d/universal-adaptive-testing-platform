@@ -8,10 +8,27 @@ A configurable, extensible adaptive testing engine supporting multiple exam meth
 - **Language**: TypeScript (strict mode)
 - **Package Manager**: pnpm (workspaces)
 - **Backend**: Express.js
-- **Databases**: PostgreSQL (ACID transactions), MongoDB (flexible schemas)
+- **Frontend**: Next.js (React)
+- **Databases**: PostgreSQL (ACID transactions), MongoDB (flexible schemas + app settings)
 - **Cache**: Redis
+- **LLM Integration**: LiteLLM (unified API for multiple LLM providers)
 - **Testing**: node:test, Sinon.js, c8 coverage
 - **Build**: tsup (packages), tsx (development)
+
+## App Settings (MongoDB)
+Application settings are stored in MongoDB to enable admin configuration without code deployment:
+- Feature flags and toggles
+- LLM provider settings (model selection, temperature, etc.)
+- Exam configuration defaults
+- UI/UX customization options
+- Rate limits and quotas
+
+## LLM Integration (LiteLLM)
+LiteLLM provides a unified interface for AI-augmented features:
+- Content authoring assistance
+- Question generation and validation
+- Analytics and insights
+- Supports multiple providers (OpenAI, Anthropic, etc.) via single API
 
 ## RCF Framework
 This project follows the Requirements Confidence Framework (RCF):
@@ -34,11 +51,15 @@ This project follows the Requirements Confidence Framework (RCF):
 
 ## Workspace Structure
 ```
-apps/api-service/          # Main API service
+apps/
+  api-service/             # Main API service (Express.js)
+  spa-student/             # Student portal (Next.js)
+  spa-admin/               # Admin dashboard (Next.js)
 packages/@uat/
   backend-common/          # Shared utilities, middleware, services
   backend-scoring/         # Scoring engine (IRT algorithms)
   backend-integration-tests/  # Test infrastructure
+  ui-components/           # Shared React components
 docs/
   rcf/                     # JSON documents (manifest, PRD, stories)
   product/                 # Markdown requirements

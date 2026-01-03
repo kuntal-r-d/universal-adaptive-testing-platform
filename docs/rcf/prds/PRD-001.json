@@ -456,17 +456,18 @@
     },
     {
       "id": "REQ-029",
-      "title": "One-Time Exam Purchases",
-      "description": "The system must support one-time purchases of individual exams for students who prefer not to subscribe. Purchases grant permanent access to the exam with all features including analytics and progress tracking.",
+      "title": "Pay-Per-Exam Purchase Model",
+      "description": "The system must support a pay-per-exam purchasing model where: (1) students purchase individual exam packages one at a time, (2) each purchase grants unlimited attempts until pass for that specific exam, (3) upon exam completion, detailed analytics, performance insights, and recommended next steps are displayed and permanently saved to the student's profile, (4) the system shows recommended next exams based on performance but requires purchase to access. All exam history and analytics remain accessible regardless of future purchases.",
       "category": "functional",
       "domain": "B2C Platform",
       "priority": "must",
-      "rationale": "One-time purchases offer flexibility for students who only need specific exams.",
+      "rationale": "Pay-per-exam model provides clear value proposition - students pay only for what they need while retaining all analytics and progress data to inform their learning journey.",
       "tags": [
         "purchase",
         "payments",
         "b2c",
-        "access"
+        "access",
+        "pay-per-exam"
       ]
     },
     {
