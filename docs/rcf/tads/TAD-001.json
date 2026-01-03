@@ -7,14 +7,15 @@
   "phase": "Phase 1 - B2C Platform",
   "status": "draft",
   "createdAt": "2026-01-02T12:00:00.000Z",
-  "updatedAt": "2026-01-02T12:00:00.000Z",
+  "updatedAt": "2026-01-03T16:30:00.000Z",
   "systemOverview": {
     "description": "A cloud-native adaptive testing platform built as a TypeScript pnpm monorepo with microservices architecture. Phase 1 focuses on B2C delivery enabling individual students to discover, purchase, and take adaptive exams via web and mobile applications.",
     "keyCharacteristics": [
       "Pluggable strategy architecture for multiple exam methodologies",
       "Real-time adaptive scoring with sub-200ms latency",
       "Cross-device progress synchronization",
-      "Subscription and one-time purchase payment models",
+      "Pay-per-exam model with unlimited attempts until pass",
+      "Persistent analytics and exam recommendations",
       "Native mobile apps with offline support"
     ]
   },
@@ -77,9 +78,13 @@
         "responsibilities": [
           "Exam catalog browsing",
           "Exam taking interface",
-          "Progress dashboard",
-          "Analytics visualization",
-          "Pay-per-exam purchase management"
+          "Progress dashboard with performance trends",
+          "Post-exam analytics and gap analysis",
+          "Study time recommendations",
+          "Topic-based practice exams",
+          "Exam scheduling suggestions",
+          "Pay-per-exam purchase management",
+          "Exam recommendations display"
         ]
       },
       {
@@ -147,10 +152,15 @@
         "exam_profiles",
         "question_banks",
         "questions",
+        "question_tags",
         "sessions",
         "responses",
         "exam_purchases",
+        "exam_attempts",
         "user_progress",
+        "user_analytics",
+        "study_recommendations",
+        "exam_recommendations",
         "audit_logs"
       ],
       "features": ["JSONB for flexible content", "Row-Level Security ready for Phase 2"]
@@ -234,9 +244,29 @@
         "description": "User progress and analytics"
       },
       {
+        "endpoint": "/api/v1/purchases",
+        "methods": ["GET", "POST"],
+        "description": "Pay-per-exam purchases and access management"
+      },
+      {
         "endpoint": "/api/v1/subscriptions",
         "methods": ["GET", "POST", "DELETE"],
         "description": "Subscription management"
+      },
+      {
+        "endpoint": "/api/v1/analytics",
+        "methods": ["GET"],
+        "description": "Post-exam analytics, gap analysis, and study recommendations"
+      },
+      {
+        "endpoint": "/api/v1/recommendations",
+        "methods": ["GET"],
+        "description": "Personalized exam and study recommendations"
+      },
+      {
+        "endpoint": "/api/v1/practice-exams",
+        "methods": ["GET", "POST"],
+        "description": "Topic-based practice exam generation"
       }
     ]
   },
