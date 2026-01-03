@@ -73,26 +73,27 @@
         "name": "spa-student",
         "type": "frontend",
         "description": "Student-facing web application",
-        "technology": "Vue 3/Vite/TypeScript",
+        "technology": "Next.js 15/React/TypeScript",
         "responsibilities": [
           "Exam catalog browsing",
           "Exam taking interface",
           "Progress dashboard",
           "Analytics visualization",
-          "Subscription/purchase management"
+          "Pay-per-exam purchase management"
         ]
       },
       {
-        "name": "spa-platform-admin",
+        "name": "spa-admin",
         "type": "frontend",
         "description": "Platform administrator dashboard",
-        "technology": "Vue 3/Vite/TypeScript",
+        "technology": "Next.js 15/React/TypeScript",
         "responsibilities": [
           "Question bank management",
           "Exam profile configuration",
           "User management",
           "Analytics and reporting",
-          "Content workflow"
+          "Content workflow",
+          "App settings configuration"
         ]
       },
       {
@@ -129,6 +130,11 @@
         "name": "@uat/shared-types",
         "description": "Shared TypeScript type definitions",
         "exports": ["ExamTypes", "UserTypes", "SessionTypes", "PaymentTypes"]
+      },
+      {
+        "name": "@uat/ui-components",
+        "description": "Shared React component library for Next.js apps",
+        "exports": ["Button", "Card", "DataTable", "Chart", "ExamCard", "ProgressBar"]
       }
     ]
   },
@@ -143,12 +149,24 @@
         "questions",
         "sessions",
         "responses",
-        "user_subscriptions",
         "exam_purchases",
         "user_progress",
         "audit_logs"
       ],
       "features": ["JSONB for flexible content", "Row-Level Security ready for Phase 2"]
+    },
+    "settingsDatabase": {
+      "type": "MongoDB",
+      "purpose": "Application settings and configuration (admin-configurable without deployment)",
+      "collections": [
+        "app_settings",
+        "feature_flags",
+        "llm_provider_config",
+        "exam_defaults",
+        "ui_customizations",
+        "rate_limits"
+      ],
+      "features": ["Flexible schema for evolving settings", "Admin dashboard integration"]
     },
     "cache": {
       "type": "Redis 7",
@@ -164,10 +182,16 @@
   "integrationArchitecture": {
     "externalServices": [
       {
+        "name": "LiteLLM",
+        "purpose": "Unified LLM API gateway",
+        "integration": "REST API (OpenAI-compatible)",
+        "features": ["Multi-provider support (OpenAI, Anthropic, etc.)", "Content generation", "Question validation", "Analytics insights"]
+      },
+      {
         "name": "Stripe",
         "purpose": "Payment processing",
         "integration": "REST API + Webhooks",
-        "features": ["Subscriptions", "One-time payments", "Invoicing"]
+        "features": ["Pay-per-exam purchases", "Subscriptions", "Invoicing"]
       },
       {
         "name": "Auth0",
@@ -318,6 +342,34 @@
       "decision": "Implement scoring service in Python with FastAPI",
       "rationale": "Access to statistical libraries (NumPy, SciPy) for IRT implementations",
       "traceability": ["REQ-012", "REQ-013"]
+    },
+    {
+      "id": "ADR-007",
+      "title": "MongoDB for Application Settings",
+      "decision": "Store application settings in MongoDB instead of PostgreSQL",
+      "rationale": "Enables admin configuration changes without code deployment, flexible schema for evolving settings",
+      "traceability": ["REQ-025", "REQ-026"]
+    },
+    {
+      "id": "ADR-008",
+      "title": "LiteLLM for AI Integration",
+      "decision": "Use LiteLLM as unified gateway for all LLM providers",
+      "rationale": "Single API for multiple providers (OpenAI, Anthropic), enables dynamic provider switching via admin settings",
+      "traceability": ["REQ-007"]
+    },
+    {
+      "id": "ADR-009",
+      "title": "Next.js for Frontend Applications",
+      "decision": "Build spa-student and spa-admin with Next.js 15 (React)",
+      "rationale": "Server-side rendering for SEO, React ecosystem, shared component library potential",
+      "traceability": ["REQ-020", "REQ-027"]
+    },
+    {
+      "id": "ADR-010",
+      "title": "Pay-Per-Exam with Unlimited Attempts",
+      "decision": "Implement pay-per-exam model where each purchase grants unlimited attempts until pass",
+      "rationale": "Clear value proposition for students, reduces per-attempt anxiety, encourages learning-focused approach",
+      "traceability": ["REQ-029"]
     }
   ]
 }

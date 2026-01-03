@@ -656,10 +656,10 @@
     },
     {
       "id": "US-030",
-      "title": "Purchase Individual Exams",
+      "title": "Purchase Exam with Unlimited Attempts",
       "persona": "Test Taker",
-      "goal": "buy a single exam without subscribing",
-      "benefit": "pay only for what I need",
+      "goal": "buy a single exam package with unlimited attempts until I pass",
+      "benefit": "focus on learning without worrying about per-attempt costs",
       "requirementIds": ["REQ-029"],
       "acceptanceCriteria": [
         {
@@ -668,15 +668,23 @@
         },
         {
           "id": "AC-092",
-          "description": "Given a completed purchase, when confirmed, then I have permanent access to that exam"
+          "description": "Given a completed purchase, when confirmed, then I have unlimited attempts until I pass that exam"
         },
         {
           "id": "AC-093",
-          "description": "Given my purchase history, when I view it, then I see all purchased exams and receipts"
+          "description": "Given my purchase history, when I view it, then I see all purchased exams, attempt count, and receipts"
         },
         {
           "id": "AC-094",
-          "description": "Given exam bundles, when available, then I can purchase multiple exams at a discount"
+          "description": "Given exam completion, when I finish an attempt, then detailed analytics and recommendations are saved to my profile permanently"
+        },
+        {
+          "id": "AC-095",
+          "description": "Given exam completion, when I view results, then I see recommended next exams based on my performance"
+        },
+        {
+          "id": "AC-096",
+          "description": "Given recommended exams, when I click on one, then I see the purchase option to unlock it"
         }
       ]
     },
@@ -689,19 +697,19 @@
       "requirementIds": ["REQ-030"],
       "acceptanceCriteria": [
         {
-          "id": "AC-095",
+          "id": "AC-097",
           "description": "Given the mobile app, when I log in, then I see my dashboard and available exams"
         },
         {
-          "id": "AC-096",
+          "id": "AC-098",
           "description": "Given an exam on mobile, when I take it, then the experience is optimized for touch"
         },
         {
-          "id": "AC-097",
+          "id": "AC-099",
           "description": "Given offline mode, when enabled, then I can take cached exams without internet"
         },
         {
-          "id": "AC-098",
+          "id": "AC-100",
           "description": "Given push notifications, when enabled, then I receive study reminders"
         }
       ]
@@ -715,19 +723,19 @@
       "requirementIds": ["REQ-031"],
       "acceptanceCriteria": [
         {
-          "id": "AC-099",
+          "id": "AC-101",
           "description": "Given I start an exam on web, when I open the mobile app, then I can continue from where I left off"
         },
         {
-          "id": "AC-100",
+          "id": "AC-102",
           "description": "Given progress updates, when synced, then changes appear across devices within 5 seconds"
         },
         {
-          "id": "AC-101",
+          "id": "AC-103",
           "description": "Given offline changes, when I reconnect, then they sync automatically without data loss"
         },
         {
-          "id": "AC-102",
+          "id": "AC-104",
           "description": "Given concurrent edits, when conflicts occur, then the most recent change wins with notification"
         }
       ]
